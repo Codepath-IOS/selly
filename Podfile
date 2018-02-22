@@ -6,6 +6,7 @@ target 'Selly' do
   use_frameworks!
 
   # Pods for Selly
+  pod 'Firebase/Core'
 
   target 'SellyTests' do
     inherit! :search_paths
