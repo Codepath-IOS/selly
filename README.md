@@ -16,3 +16,6 @@
 ## FRAMEWORK
 <img src='https://i.imgur.com/flhWFwE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+## DATA SCHEMA
+<img src='https://i.imgur.com/X27YcCg.jpg'/>
