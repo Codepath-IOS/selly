@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>53633716792-b0u5ourdlamm33c3vv219pk8funec95a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.53633716792-b0u5ourdlamm33c3vv219pk8funec95a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB4UPE0p0K1yeMtAtItYxtgKjPUVDJmhz0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>53633716792</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.selly.com</string>
+	<key>PROJECT_ID</key>
+	<string>selly-7d9c2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>selly-7d9c2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:53633716792:ios:d9709059290f2d1a</string>
+	<key>DATABASE_URL</key>
+	<string>https://selly-7d9c2.firebaseio.com</string>
+</dict>
+</plist>
