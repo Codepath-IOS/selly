@@ -6,7 +6,6 @@ target 'Selly' do
   use_frameworks!
 
   # Pods for Selly
-  pod 'Firebase/Core'
 
   target 'SellyTests' do
     inherit! :search_paths
@@ -17,5 +16,8 @@ target 'Selly' do
     inherit! :search_paths
     # Pods for testing
   end
+	pod 'Firebase/Core’
+	pod 'Firebase/Auth'
+	pod 'FBSDKLoginKit'
 
 end
