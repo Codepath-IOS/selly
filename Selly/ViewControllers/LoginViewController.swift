@@ -12,6 +12,8 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 import FBSDKLoginKit
+import FirebaseDatabase
+
 
 class LoginViewController: UIViewController {
 
@@ -57,7 +59,9 @@ class LoginViewController: UIViewController {
                 }else {
                     self.performSegue(withIdentifier: "login", sender: self)
                     print("Logged in")
-                    print(user?.uid ?? "")
+                    let dbRef = Database.database().reference()
+                    dbRef.child((user?.uid)!).setValue(["Email": user?.email, "Display-Name": user?.displayName])
+                    //print(user?.email ?? "")
                     
                 }
                 
