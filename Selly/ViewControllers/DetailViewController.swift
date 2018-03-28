@@ -8,7 +8,18 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // number of rows
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // row cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rowCell", for: indexPath)
+        return cell;
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

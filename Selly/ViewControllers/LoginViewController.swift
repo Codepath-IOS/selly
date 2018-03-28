@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 import FirebaseAuth
 import FBSDKLoginKit
 
@@ -14,7 +17,7 @@ class LoginViewController: UIViewController {
 
     var secret: String! = "81a01b51b4b26d7944fa1110a1019b72"
     var appID: String! = "1869127423120278"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,10 +62,14 @@ class LoginViewController: UIViewController {
                 }
                 
             })
-            
         }
     }
+    
+    
 
+
+    
+    
     /*
     // MARK: - Navigation
 
