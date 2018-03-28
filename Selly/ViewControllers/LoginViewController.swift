@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "login", sender: self)
                     print("Logged in")
                     let dbRef = Database.database().reference()
-                    dbRef.child((user?.uid)!).setValue(["Email": user?.email, "Password": user?.displayName])
+                    dbRef.child((user?.uid)!).setValue(["Email": user?.email, "Display-Name": user?.displayName])
                     //print(user?.email ?? "")
                     
                 }
