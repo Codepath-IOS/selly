@@ -19,5 +19,7 @@ target 'Selly' do
 	pod 'Firebase/Core’
 	pod 'Firebase/Auth'
 	pod 'FBSDKLoginKit'
+	pod 'Firebase/Storage’
+	pod 'Firebase/Database’
 
 end

@@ -9,11 +9,12 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import FirebaseDatabase
+
 
 class LoginViewController: UIViewController {
 
-    var secret: String! = "81a01b51b4b26d7944fa1110a1019b72"
-    var appID: String! = "1869127423120278"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,9 @@ class LoginViewController: UIViewController {
                 }else {
                     self.performSegue(withIdentifier: "login", sender: self)
                     print("Logged in")
-                    print(user?.uid ?? "")
+                    let dbRef = Database.database().reference()
+                    dbRef.child((user?.uid)!).setValue(["Email": user?.email, "Display-Name": user?.displayName])
+                    //print(user?.email ?? "")
                     
                 }
                 
