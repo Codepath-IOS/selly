@@ -55,12 +55,15 @@ class LoginViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                     
                     return
-                }else {
-                    self.performSegue(withIdentifier: "login", sender: self)
-                    print("Logged in")
-                    let dbRef = Database.database().reference()
-                    dbRef.child((user?.uid)!).setValue(["Email": user?.email, "Display-Name": user?.displayName])
-                    //print(user?.uid ?? "")
+                } else if let user = user {
+                    SellyClient.sharedInstance.createFacebookUser(user: user.uid, name: user.displayName!, email: user.email!, photo: user.providerData[0].photoURL!.absoluteString, success: { (newUser) in
+                        print("\(newUser.name) logged in!")
+                        
+                        self.performSegue(withIdentifier: "login", sender: self)
+                    }, failure: { (error) in
+                        print(error.localizedDescription)
+                    })
+                    //print(user?.email ?? "")
                     
                 }
                 
