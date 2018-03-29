@@ -16,13 +16,10 @@ target 'Selly' do
     inherit! :search_paths
     # Pods for testing
   end
+
 	pod 'Firebase/Core’
 	pod 'Firebase/Auth'
-    pod 'Firebase/Storage'
-    pod 'Firebase/Database'
+    	pod 'Firebase/Storage'
+    	pod 'Firebase/Database'
 	pod 'FBSDKLoginKit'
-    pod 'JSQMessagesViewController'
-	pod 'Firebase/Storage’
-	pod 'Firebase/Database’
-
 end
