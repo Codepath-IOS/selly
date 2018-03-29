@@ -160,15 +160,35 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
-@class UITableViewCell;
+@class UIImagePickerController;
+@class UIImageView;
 
 SWIFT_CLASS("_TtC5Selly20DetailViewController")
-@interface DetailViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image1;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image2;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image4;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image3;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image5;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image6;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage1;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage2;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage3;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage4;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage6;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage5;
+@property (nonatomic, strong) UIImagePickerController * _Nonnull imagePicker;
+@property (nonatomic, weak) UIImageView * _Null_unspecified selectedImageView;
+@property (nonatomic, weak) UIImageView * _Null_unspecified addImageView;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (IBAction)uploadImage1:(id _Nonnull)sender;
+- (IBAction)uploadImage2:(id _Nonnull)sender;
+- (IBAction)uploadImage3:(id _Nonnull)sender;
+- (IBAction)uploadImage4:(id _Nonnull)sender;
+- (IBAction)uploadImage5:(id _Nonnull)sender;
+- (IBAction)uploadImage6:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                     print("Logged in")
                     let dbRef = Database.database().reference()
                     dbRef.child((user?.uid)!).setValue(["Email": user?.email, "Display-Name": user?.displayName])
-                    //print(user?.email ?? "")
+                    //print(user?.uid ?? "")
                     
                 }
                 
