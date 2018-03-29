@@ -58,9 +58,12 @@ class SellyClient {
     func uploadPhoto(itemPhotos: [UIImage], success: @escaping ([String]) ->(), failure: @escaping (Error) ->()) {
         var photoURLs: [String] = []
         var count = 0
+//        let myGroup = DispatchGroup()
+
         for photo in itemPhotos {
             count += 1
-            itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, metadata: nil, completion: { (metadata, error) in
+//            myGroup.enter()
+itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, metadata: nil, completion: { (metadata, error) in
                 if let error = error {
                     print(error.localizedDescription)
                     failure(error)
@@ -68,13 +71,22 @@ class SellyClient {
                 } else if let metadata = metadata {
                     let downloadUrl = metadata.downloadURL()!.absoluteString
                     photoURLs.append(downloadUrl)
+                    
+//                    myGroup.leave()
+
                     if count == itemPhotos.count {
                         success(photoURLs)
                     }
+                    
                 }
             })
         }
-        
+//        success(photoURLs)
     }
+    
+    // *TODO : getItem function
+    
+    
+    
 }
 
