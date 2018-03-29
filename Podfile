@@ -24,5 +24,7 @@ target 'Selly' do
 	pod 'FBSDKLoginKit'
 	pod 'AACarousel'
 	pod 'Kingfisher', '~> 4.0'
+	pod 'Alamofire'
+	pod 'AlamofireImage', '~> 3.3'
 
 end

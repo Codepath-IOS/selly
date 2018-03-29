@@ -28,5 +28,6 @@ class Item: NSObject {
         uidSeller = itemInfo["uidSeller"] as! String
       //  itemPhotoURL = itemInfo["itemPhotoURL"] as! [String]
     }
+   
     
 }
