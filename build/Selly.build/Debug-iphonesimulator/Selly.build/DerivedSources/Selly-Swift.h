@@ -144,8 +144,10 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 @class FIRDatabaseReference;
 @class UIPanGestureRecognizer;
+@class UIStoryboardSegue;
 @class UILabel;
 @class UIButton;
+@class UIImageView;
 @class NSBundle;
 @class NSCoder;
 
@@ -156,14 +158,22 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified titleLabel;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified itemImageView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified sellerImage;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerEmail;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerName;
 @property (nonatomic, strong) IBOutlet id _Null_unspecified gestureRecognizer;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemID;
+@property (nonatomic, copy) NSString * _Nonnull itemName;
+@property (nonatomic, copy) NSString * _Nonnull itemDescription;
+@property (nonatomic, copy) NSString * _Nonnull itemPrice;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
 - (IBAction)rightButton:(id _Nonnull)sender;
 - (void)getProduct;
 - (void)viewDidLoad;
 - (void)didPanWithSender:(UIPanGestureRecognizer * _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (IBAction)likeButtonAction:(id _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -178,7 +188,6 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 @end
 
 @class UIImagePickerController;
-@class UIImageView;
 @class UITextView;
 @class UITextField;
 
@@ -231,6 +240,9 @@ SWIFT_CLASS("_TtC5Selly4Item")
 @property (nonatomic, copy) NSString * _Null_unspecified itemCategory;
 @property (nonatomic, copy) NSString * _Null_unspecified itemDescription;
 @property (nonatomic, copy) NSString * _Null_unspecified uidSeller;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerName;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerImageURL;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerEmail;
 - (nonnull instancetype)initWithItemInfo:(NSDictionary<NSString *, id> * _Nonnull)itemInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
@@ -255,8 +267,16 @@ SWIFT_CLASS("_TtC5Selly19LoginViewController")
 
 SWIFT_CLASS("_TtC5Selly20UploadViewController")
 @interface UploadViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemDescription;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemPrice;
 @property (nonatomic, weak) IBOutlet AACarousel * _Null_unspecified corouselView;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull titleArray;
+@property (nonatomic, copy) NSString * _Nullable itemTitle;
+@property (nonatomic, copy) NSString * _Nullable itemDesc;
+@property (nonatomic, copy) NSString * _Nullable price;
+- (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)downloadImages:(NSString * _Nonnull)url :(NSInteger)index;

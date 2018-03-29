@@ -21,10 +21,19 @@ class BrowseViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     // connect these
     @IBOutlet weak var itemImageView: UIButton!
-    //@IBOutlet weak var userImageView: UIButton!
+    
+    @IBOutlet weak var sellerImage: UIImageView!
+    
+    @IBOutlet weak var sellerEmail: UILabel!
+    @IBOutlet weak var sellerName: UILabel!
     @IBOutlet var gestureRecognizer: AnyObject!
     
     var itemID: [String] = [] // keeps keys of items
+    var itemName: String = ""
+    var itemDescription: String = ""
+    var itemPrice: String = ""
+    var itemURLS: [String] = []
+    
     
     @IBAction func rightButton(_ sender: Any) {
         performSegue(withIdentifier: "right", sender: self)
@@ -41,17 +50,24 @@ class BrowseViewController: UIViewController {
                     let imageUrls = cc["itemPhotos"] as? [String]
                     let itemPirce = cc["itemPrice"] as? String!
                     let itemCategory = cc["itemCategory"] as? String!
-
+                    let sellerName = cc["sellerName"] as? String!
+                    let sellerEmail = cc["sellerEmail"] as? String!
+                    let sellerImageURL = cc["sellerImageURL"] as? String!
+                    
+                    self.itemDescription = (cc["itemDescription"] as? String!)!
                     // storing itemID as key
                     self.itemID.append((cc["itemId"] as? String!)!)
+                    self.itemURLS = imageUrls!
                     let url = URL(string: (imageUrls?[0])!)
-                    print(url)
-                    
+                    let sellerUrl = URL(string: sellerImageURL!)
                     // set image, name, price, category
                     self.itemImageView.af_setImage(for: .normal, url: url!)
                     self.titleLabel.text = name
-                    self.priceLabel.text = itemPirce
+                    self.priceLabel.text = "$ " + itemPirce!
                     self.categoryLabel.text = itemCategory
+                    self.sellerEmail.text = sellerEmail
+                    self.sellerName.text = sellerName
+                    self.sellerImage.af_setImage(withURL: sellerUrl!)
                     break
                 }
             }
@@ -60,7 +76,7 @@ class BrowseViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getProduct()
         // Attach panGestureREcognizer to a view
         itemImageView.imageView?.layer.cornerRadius = 7
         
@@ -69,6 +85,12 @@ class BrowseViewController: UIViewController {
         itemImageView.addGestureRecognizer(panGestureRecognizer)
         cardInitialCenter = itemImageView.center
         holdDefaultPosition = itemImageView.center
+        
+        sellerImage.layer.borderWidth = 1
+        sellerImage.layer.masksToBounds = false
+        sellerImage.layer.borderColor = UIColor.black.cgColor
+        sellerImage.layer.cornerRadius = sellerImage.frame.height/2
+        sellerImage.clipsToBounds = true
         // Do any additional setup after loading the view...
     }
     
@@ -87,22 +109,24 @@ class BrowseViewController: UIViewController {
             //print("Gesture changing")
             
         } else if sender.state == .ended {
-            /*if translation.x > 100{
+            if translation.x > 100{
                 print("swiped right")
                  getProduct()
                 UIView.animate(withDuration:1, animations: {
                     // This causes first view to fade in and second view to fade out
-                    self.itemImageView.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)
-                    self.itemImageView.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 560))
+                    //self.itemImageView.center.x = 1000
+                    self.itemImageView.imageView?.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)
+                    
+                    self.getProduct()
                 })
-                
             }
             else if translation.x < -100{
                 print("swiped left")
                 UIView.animate(withDuration:1, animations: {
                     self.itemImageView.center.x = -1000
+                    self.getProduct()
                 })
-                getProduct()
+                
             }
             else{
                 UIView.animate(withDuration:1, animations: {
@@ -110,38 +134,11 @@ class BrowseViewController: UIViewController {
                     self.itemImageView.center.x = self.holdDefaultPosition.x
                     self.itemImageView.center.y = self.holdDefaultPosition.y
                 })
-             }*/
-            let location = sender.location(in: view)
-            if sender.state == .began {
-                cardInitialCenter = itemImageView.center
-                print("Gesture began")
-             } else if sender.state == .changed {
-                if (location.y < itemImageView.frame.height/2)
-                { itemImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
-                    itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 560))
-                }
-                else {
-                    itemImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
-                    itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(-1.0 * Double(translation.x) * M_PI / 560))
-                }
-                
-                if(translation.x > 175 || translation.x < -175) {
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.itemImageView.alpha = 0
-                    })
-                }
-                print("Gesture is changing")
-             } else if sender.state == .ended {
-                itemImageView.center = CGPoint(x: cardInitialCenter.x, y: cardInitialCenter.y)
-                itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
-                print("Gesture ended")
-                
-
             }
-
             print("Gesture has ended")
-            
         }
+        
+   
     }
     
     override func didReceiveMemoryWarning() {
@@ -153,14 +150,24 @@ class BrowseViewController: UIViewController {
         getProduct()
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if (segue.identifier == "detail"){
+            
+            
+            //let desViewController = segue.destination as? UINavigationController
+            //let VC = desViewController?.viewControllers.first as? UploadViewController
+            let VC = segue.destination as? UploadViewController
+            //print(titleLabel.text)
+            VC?.itemTitle = titleLabel.text
+            VC?.price = priceLabel.text
+            VC?.itemURLS = itemURLS
+            VC?.itemDesc = itemDescription
+        }
      }
-     */
+    
     
 }
