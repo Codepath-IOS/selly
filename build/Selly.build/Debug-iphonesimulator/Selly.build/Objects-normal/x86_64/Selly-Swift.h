@@ -117,6 +117,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
 @import Foundation;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -194,6 +195,19 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 @end
 
 
+SWIFT_CLASS("_TtC5Selly4Item")
+@interface Item : NSObject
+@property (nonatomic, copy) NSString * _Null_unspecified itemId;
+@property (nonatomic, copy) NSString * _Null_unspecified itemName;
+@property (nonatomic, copy) NSString * _Null_unspecified itemPrice;
+@property (nonatomic, copy) NSString * _Null_unspecified itemCategory;
+@property (nonatomic, copy) NSString * _Null_unspecified itemDescription;
+@property (nonatomic, copy) NSString * _Null_unspecified uidSeller;
+- (nonnull instancetype)initWithItemInfo:(NSDictionary<NSString *, id> * _Nonnull)itemInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC5Selly19LoginViewController")
 @interface LoginViewController : UIViewController
 - (void)viewDidLoad;
@@ -204,12 +218,27 @@ SWIFT_CLASS("_TtC5Selly19LoginViewController")
 @end
 
 
+@interface UIImage (SWIFT_EXTENSION(Selly))
+@end
+
+
 SWIFT_CLASS("_TtC5Selly20UploadViewController")
 @interface UploadViewController : UIViewController
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Selly4User")
+@interface User : NSObject
+@property (nonatomic, copy) NSString * _Null_unspecified uid;
+@property (nonatomic, copy) NSString * _Null_unspecified name;
+@property (nonatomic, copy) NSString * _Null_unspecified email;
+@property (nonatomic, copy) NSString * _Null_unspecified photo;
+- (nonnull instancetype)initWithUserInfo:(NSDictionary<NSString *, id> * _Nonnull)userInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
