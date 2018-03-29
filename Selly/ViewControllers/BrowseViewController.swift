@@ -58,6 +58,7 @@ class BrowseViewController: UIViewController {
                     // This causes first view to fade in and second view to fade out
                     self.itemImageView.center.x = 1000
                 })
+
                 /*var dict: NSDictionary = [:]
                 databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
                     //var itemsList: [String] = []
@@ -79,6 +80,7 @@ class BrowseViewController: UIViewController {
                     
                 })*/
                 
+
                 
             }
             else if translation.x < -100{
