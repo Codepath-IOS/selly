@@ -1,8 +1,8 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
-options: "d34ff32f94bbb211647270d4cdf39eef"
-build_time: [575595128, 152734000]
+options: "19583447a8dcaf50075ecdabf36611bd"
+build_time: [575599039, 585366000]
 inputs:
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/LoginViewController.swift": [575595107, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/LoginViewController.swift": [575598079, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/UploadViewController.swift": [573609442, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewController.swift": [572572448, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/ChatViewController.swift": [575595107, 0]

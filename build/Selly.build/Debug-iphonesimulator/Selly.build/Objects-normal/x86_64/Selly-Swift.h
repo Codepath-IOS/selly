@@ -176,8 +176,6 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 
 SWIFT_CLASS("_TtC5Selly19LoginViewController")
 @interface LoginViewController : UIViewController
-@property (nonatomic, copy) NSString * _Null_unspecified secret;
-@property (nonatomic, copy) NSString * _Null_unspecified appID;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)loginButton:(id _Nonnull)sender;
