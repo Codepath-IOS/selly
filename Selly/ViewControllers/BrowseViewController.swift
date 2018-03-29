@@ -27,6 +27,8 @@ class BrowseViewController: UIViewController {
         super.viewDidLoad()
         
         // Attach panGestureREcognizer to a view
+        itemImageView.imageView?.layer.cornerRadius = 7
+        
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
         itemImageView.isUserInteractionEnabled = true
         itemImageView.addGestureRecognizer(panGestureRecognizer)
@@ -56,15 +58,29 @@ class BrowseViewController: UIViewController {
                     // This causes first view to fade in and second view to fade out
                     self.itemImageView.center.x = 1000
                 })
-//                databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
-//                    for data in (snapshot.value as? NSDictionary)! {
-//                        //print(data)
-//                        let cc = data.value as! NSDictionary
-//                        let name = cc["itemName"] as? String ?? ""
-//                        let imageUrls = cc["itemPhotos"] as? [String]
-//                        print(imageUrls)
-//                    }
-//                })
+
+                /*var dict: NSDictionary = [:]
+                databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+                    //var itemsList: [String] = []
+                    for data in (snapshot.value as? NSDictionary)! {
+                        for items in (data.value as? NSDictionary)! {
+                            let cc = items.value as! NSDictionary
+                            let imageUrls = cc["itemPhotos"] as? [String]
+                            
+                        }
+                        //print(data)
+                        let cc = data.value as! NSDictionary
+                        let name = cc["itemName"] as? String ?? ""
+                        let imageUrls = cc["itemPhotos"] as? [String]
+                        //dict = [data.key: imageUrls]
+                        dict.setValue(imageUrls, forKey: data.key as! String)
+                        //itemsList.append(data.key as! String)
+                    }
+                    //print(dict)
+                    
+                })*/
+                
+
                 
             }
             else if translation.x < -100{

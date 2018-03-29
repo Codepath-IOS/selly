@@ -22,4 +22,7 @@ target 'Selly' do
     	pod 'Firebase/Storage'
     	pod 'Firebase/Database'
 	pod 'FBSDKLoginKit'
+	pod 'AACarousel'
+	pod 'Kingfisher', '~> 4.0'
+
 end
