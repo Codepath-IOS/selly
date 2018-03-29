@@ -141,12 +141,20 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class FIRDatabaseReference;
+@class UIPanGestureRecognizer;
+@class UIButton;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @interface BrowseViewController : UIViewController
+@property (nonatomic, strong) FIRDatabaseReference * _Nonnull databaseRef;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified itemImageView;
+@property (nonatomic, strong) IBOutlet id _Null_unspecified gestureRecognizer;
+- (IBAction)rightButton:(id _Nonnull)sender;
 - (void)viewDidLoad;
+- (void)didPanWithSender:(UIPanGestureRecognizer * _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -162,14 +170,17 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 @end
 
 @class UIImagePickerController;
+@class UITextView;
+@class UILabel;
 @class UIImageView;
 @class UITextField;
-@class UITextView;
 
 SWIFT_CLASS("_TtC5Selly20DetailViewController")
-@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DetailViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UINavigationControllerDelegate>
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified charCountLabel;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image1;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image2;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified textField;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image4;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image3;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image5;
@@ -184,10 +195,13 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified itemNameTextField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified itemPriceTextField;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified itemDescriptionTextField;
+@property (nonatomic) NSInteger charCount;
 @property (nonatomic, weak) UIImageView * _Null_unspecified selectedImageView;
 @property (nonatomic, weak) UIImageView * _Null_unspecified addImageView;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text;
+- (void)textViewDidChange:(UITextView * _Nonnull)textView;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
 - (IBAction)uploadImage1:(id _Nonnull)sender;
 - (IBAction)uploadImage2:(id _Nonnull)sender;
