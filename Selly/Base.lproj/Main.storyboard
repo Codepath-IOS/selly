@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-=======
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
->>>>>>> 1e99863f9c31949df714f575860497820cba4c63
-=======
-
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
->>>>>>> 7b2e56dfe2ea976f0a233c9ea47cedb5f688c984
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,8 +37,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-
-                        <segue destination="9CJ-9N-MmQ" kind="show" identifier="login" id="34H-3O-TVy"/>
+                        <segue destination="QG0-dO-frz" kind="show" identifier="login" id="zSd-0R-JDN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELK-R3-MXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="-180.35982008995504"/>
+            <point key="canvasLocation" x="2436" y="-180.35982008995504"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="0G7-zc-yGS">
@@ -243,17 +230,21 @@
                                 <rect key="frame" x="101" y="382" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhA-qZ-EIK">
-                                <rect key="frame" x="313" y="23" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onPost:" destination="9CJ-9N-MmQ" eventType="touchUpInside" id="qTZ-51-cmy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KGi-2N-831">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kud-q1-uoM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m1n-hS-9ca">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onPost:" destination="9CJ-9N-MmQ" eventType="touchUpInside" id="37z-PX-Xba"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addImage1" destination="KY3-B9-eZ9" id="1pl-vo-PEa"/>
                         <outlet property="addImage2" destination="vhc-Oh-fl0" id="c2P-gS-DwH"/>
@@ -304,7 +295,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="579.76011994002999"/>
+            <point key="canvasLocation" x="2436" y="578.86056971514245"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="KXu-8g-EE5">
@@ -319,10 +310,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OKL-WT-lLc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFB-Tw-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="106.59670164917542"/>
+            <point key="canvasLocation" x="4108" y="106.59670164917542"/>
         </scene>
         <!--Browse View Controller-->
         <scene sceneID="V7W-wI-2g3">
@@ -344,30 +336,13 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="AGL-RP-cPe" appends="YES" id="Ul3-wP-M2k"/>
                                     <outletCollection property="gestureRecognizers" destination="G6Q-q3-8Z6" appends="YES" id="Nhb-2U-GQV"/>
+                                    <segue destination="beK-6Z-ZRK" kind="show" id="aOg-H7-284"/>
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="d2Z-AE-I4P">
                                 <rect key="frame" x="39" y="449" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZi-yu-tiR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="hTC-JY-BoR">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="yka-8I-NiG">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="EVg-4E-HJl">
-                                                <rect key="frame" x="16" y="11" width="22" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </button>
-                                        </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem title="chat" style="plain" id="Lc3-ae-NZg"/>
-                                            <barButtonItem image="selly" id="gsV-X3-XBw"/>
-                                        </rightBarButtonItems>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Macbook Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcV-Fx-nto">
                                 <rect key="frame" x="62" y="339" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -392,7 +367,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="55n-WL-HJc">
+                        <barButtonItem key="leftBarButtonItem" image="ic_file_upload" style="plain" id="bSC-jq-IK5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KUs-uV-RIF">
+                                <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_file_upload"/>
+                            </button>
+                            <connections>
+                                <segue destination="9CJ-9N-MmQ" kind="show" id="G8y-ll-I6b"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_chat" style="plain" id="CoZ-qZ-GuG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ISc-ui-o3S">
+                                <rect key="frame" x="335" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_chat"/>
+                            </button>
+                            <connections>
+                                <segue destination="MTQ-0s-dSU" kind="show" id="rVH-bV-fnW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="gestureRecognizer" destination="iue-6T-hXf" id="SeD-63-gLp"/>
                         <outlet property="itemImageView" destination="iue-6T-hXf" id="8OT-Cs-wcE"/>
                     </connections>
                 </viewController>
@@ -400,7 +398,25 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="AGL-RP-cPe"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="G6Q-q3-8Z6"/>
             </objects>
-            <point key="canvasLocation" x="72.799999999999997" y="106.59670164917542"/>
+            <point key="canvasLocation" x="848.79999999999995" y="106.59670164917542"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZNJ-37-qMZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ylG-3d-Eeq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aU5-lZ-2QZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QG0-dO-frz" kind="relationship" relationship="rootViewController" id="ETV-nD-vsA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRo-cf-Cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="-582"/>
         </scene>
     </scenes>
     <resources>
@@ -408,7 +424,11 @@
         <image name="action_buttons" width="320" height="108"/>
         <image name="fb_login_default" width="600" height="145"/>
         <image name="ic_add_circle" width="24" height="24"/>
-        <image name="selly" width="644" height="302"/>
+        <image name="ic_chat" width="24" height="24"/>
+        <image name="ic_file_upload" width="24" height="24"/>
         <image name="selly-full-logo" width="644" height="940"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ETV-nD-vsA"/>
+    </inferredMetricsTieBreakers>
 </document>
