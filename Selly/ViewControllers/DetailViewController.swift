@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-extension UIImage {
+/*extension UIImage {
     enum JPEGQuality: CGFloat {
         case lowest  = 0
         case low     = 0.25
@@ -24,8 +24,31 @@ extension UIImage {
     func jpeg(_ quality: JPEGQuality) -> Data? {
         return UIImageJPEGRepresentation(self, quality.rawValue)
     }
+}*/
+extension UIImage {
+    func resizeWithPercent(percentage: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: size.width * percentage, height: size.height * percentage)))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
+    func resizeWithWidth(width: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
 }
-
 class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var charCountLabel: UILabel!
@@ -58,17 +81,17 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var itemPriceTextField: UITextField!
     
     @IBOutlet weak var itemDescriptionTextField: UITextView!
-    
+   
     var charCount = 0;
     weak var selectedImageView: UIImageView!
     weak var addImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let logo = UIImage(named: "selly.png")
-        let imageView = UIImageView(image:logo)
-        imageView.frame = CGRect(x: 0, y: 0, width: 10, height: 30)
-        self.navigationItem.titleView = imageView
+        //let logo = UIImage(named: "selly.png") //SET IMAGE OF THE NAV BAR TITLE
+        //let imageView = UIImageView(image:logo)
+        //imageView.frame = CGRect(x: 0, y: 0, width: 10, height: 30)
+        //self.navigationItem.titleView = imageView
         image1.isUserInteractionEnabled = true
         image2.isUserInteractionEnabled = true
         image3.isUserInteractionEnabled = true
@@ -79,11 +102,25 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         itemDescriptionTextField.clipsToBounds = true
         itemDescriptionTextField.delegate = self
         // Do any additional setup after loading the view.
+        resizeImages(image: image1)
+        resizeImages(image: image2)
+        resizeImages(image: image3)
+        resizeImages(image: image4)
+        resizeImages(image: image5)
+        resizeImages(image: image6)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func resizeImages(image: UIImageView) {
+        image.layer.masksToBounds = true
+        image.layer.cornerRadius = 5
+        image.layer.borderWidth = 1.5
+        image.layer.borderColor = UIColor.black.cgColor
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -96,9 +133,12 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            if let imageData = image.jpeg(.lowest) {
-                print(imageData.count)
-                let image = UIImage(data: imageData)
+            var img: UIImage!
+            img = image.resizeWithWidth(width: 700)!
+            //if let imageData = image.jpeg(.lowest) {
+            if let compressData = UIImageJPEGRepresentation(img, 0.5) {
+                //print(imageData.count)
+                let image = UIImage(data: compressData)
                 selectedImageView.image = image
             }
             

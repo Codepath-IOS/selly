@@ -118,6 +118,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import Foundation;
 @import ObjectiveC;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -170,9 +171,9 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 @end
 
 @class UIImagePickerController;
+@class UIImageView;
 @class UITextView;
 @class UILabel;
-@class UIImageView;
 @class UITextField;
 
 SWIFT_CLASS("_TtC5Selly20DetailViewController")
@@ -200,6 +201,7 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 @property (nonatomic, weak) UIImageView * _Null_unspecified addImageView;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)resizeImagesWithImage:(UIImageView * _Nonnull)image;
 - (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text;
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
@@ -239,13 +241,23 @@ SWIFT_CLASS("_TtC5Selly19LoginViewController")
 
 
 @interface UIImage (SWIFT_EXTENSION(Selly))
+- (UIImage * _Nullable)resizeWithPercentWithPercentage:(CGFloat)percentage;
+- (UIImage * _Nullable)resizeWithWidthWithWidth:(CGFloat)width;
 @end
 
+@class AACarousel;
 
 SWIFT_CLASS("_TtC5Selly20UploadViewController")
 @interface UploadViewController : UIViewController
+@property (nonatomic, weak) IBOutlet AACarousel * _Null_unspecified corouselView;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull titleArray;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)downloadImages:(NSString * _Nonnull)url :(NSInteger)index;
+- (void)didSelectCarouselView:(AACarousel * _Nonnull)view :(NSInteger)index;
+- (void)callBackFirstDisplayView:(UIImageView * _Nonnull)imageView :(NSArray<NSString *> * _Nonnull)url :(NSInteger)index;
+- (void)startAutoScroll;
+- (void)stopAutoScroll;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
