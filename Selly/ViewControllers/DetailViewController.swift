@@ -196,7 +196,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             photos.append(image2.image!)
         }
         if image3.image != nil {
-            photos.append(image4.image!)
+            photos.append(image3.image!)
         }
         if image4.image != nil {
             photos.append(image4.image!)
