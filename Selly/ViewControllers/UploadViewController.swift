@@ -25,20 +25,21 @@ class UploadViewController: UIViewController, AACarouselDelegate{
     var itemDesc: String?
     var price: String?
     
+    @IBOutlet weak var lineLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         corouselView.delegate = self
         corouselView.setCarouselData(paths: itemURLS,  describedTitle: titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "selly.png")
         //optional methods
-        corouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
-        corouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
-        itemDescription.layer.cornerRadius = 8
+        //corouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
+        //corouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
         itemDescription.clipsToBounds = true
-
+        itemDescription.sizeToFit()
         itemName.text = itemTitle
         itemDescription.text = itemDesc
         itemPrice.text = price
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,8 +68,8 @@ class UploadViewController: UIViewController, AACarouselDelegate{
     
     func didSelectCarouselView(_ view: AACarousel ,_ index: Int) {
         
-        let alert = UIAlertView.init(title:"Alert" , message: titleArray[index], delegate: self, cancelButtonTitle: "OK")
-        alert.show()
+        //let alert = UIAlertView.init(title:"Alert" , message: titleArray[index], delegate: self, cancelButtonTitle: "OK")
+        //alert.show()
         
         //startAutoScroll()
         //stopAutoScroll()

@@ -173,6 +173,8 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 - (void)didPanWithSender:(UIPanGestureRecognizer * _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (IBAction)likeButtonAction:(id _Nonnull)sender;
+- (IBAction)dislikeButton:(id _Nonnull)sender;
+- (IBAction)logoutButton:(id _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -276,6 +278,7 @@ SWIFT_CLASS("_TtC5Selly20UploadViewController")
 @property (nonatomic, copy) NSString * _Nullable itemTitle;
 @property (nonatomic, copy) NSString * _Nullable itemDesc;
 @property (nonatomic, copy) NSString * _Nullable price;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lineLabel;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;

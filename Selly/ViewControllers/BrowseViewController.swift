@@ -151,6 +151,22 @@ class BrowseViewController: UIViewController {
     }
     
     
+    @IBAction func dislikeButton(_ sender: Any) {
+        getProduct()
+    }
+    
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        try! Auth.auth().signOut()
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.present(vc, animated: false, completion: nil)
+        }
+
+    }
+    
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation

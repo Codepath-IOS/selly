@@ -245,6 +245,21 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func onPost(_ sender: Any) {
+        
+        if(itemNameTextField.text?.isEmpty)!{
+            itemNameTextField.layer.borderWidth = 1.5
+            itemNameTextField.layer.borderColor = UIColor.red.cgColor
+            return
+        }else if(itemPriceTextField.text?.isEmpty)! {
+            itemPriceTextField.layer.borderWidth = 1.5
+            itemPriceTextField.layer.borderColor = UIColor.red.cgColor
+            itemNameTextField.layer.borderWidth = 0
+            itemNameTextField.layer.borderColor = nil
+            return
+        }else {
+            itemPriceTextField.layer.borderWidth = 0
+            itemPriceTextField.layer.borderColor = nil
+        }
         var photos: [UIImage] = []
         
         if image1.image != nil {
