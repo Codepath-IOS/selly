@@ -24,6 +24,9 @@
 		328114B7894641DE438228E3 /* Pods_SellyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08917388D0C0428BD54BA38A /* Pods_SellyUITests.framework */; };
 		48133DC91F514A8EE61B3CC6 /* Pods_SellyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1068AAB20D0C7B867CB8234D /* Pods_SellyTests.framework */; };
 		92B2BC8145D90D9C6CA115DA /* Pods_Selly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C6A8513C5C15F87D013BF7 /* Pods_Selly.framework */; };
+		B87492FF206C730D000FB4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87492FE206C730D000FB4BB /* User.swift */; };
+		B8749301206C7520000FB4BB /* SellyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8749300206C7520000FB4BB /* SellyClient.swift */; };
+		B8749303206C7EC1000FB4BB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8749302206C7EC1000FB4BB /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		1FCC03CB203E3E2100B2EA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C6A8513C5C15F87D013BF7 /* Pods_Selly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		693B86950F0C16956BCDF3D0 /* Pods-SellyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellyUITests/Pods-SellyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B87492FE206C730D000FB4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B8749300206C7520000FB4BB /* SellyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellyClient.swift; sourceTree = "<group>"; };
+		B8749302206C7EC1000FB4BB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CDD62164F3BE477722E34BE4 /* Pods-Selly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selly/Pods-Selly.release.xcconfig"; sourceTree = "<group>"; };
 		D54057A8892405DD5AA970B0 /* Pods-SellyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellyUITests/Pods-SellyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EAEC828A8DCFB11CD85A78D4 /* Pods-SellyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellyTests/Pods-SellyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,20 +121,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		01CC4FF6204E09BD00D2EA41 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01CC4FF7204E09C600D2EA41 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		1307408742D7C9771E341B2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +156,7 @@
 		1FCC03A5203E3E2000B2EA26 /* Selly */ = {
 			isa = PBXGroup;
 			children = (
-				01CC4FF7204E09C600D2EA41 /* Models */,
-				01CC4FF6204E09BD00D2EA41 /* Views */,
+				B87492FD206C7301000FB4BB /* Models */,
 				01CC4FF3204E08CC00D2EA41 /* ViewControllers */,
 				1FCC03A6203E3E2000B2EA26 /* AppDelegate.swift */,
 				1FCC03A8203E3E2000B2EA26 /* ViewController.swift */,
@@ -175,6 +166,7 @@
 				1FCC03B5203E3E2100B2EA26 /* Info.plist */,
 				01CC5002204E0E0E00D2EA41 /* GoogleService-Info.plist */,
 				1FCC03AD203E3E2100B2EA26 /* Selly.xcdatamodeld */,
+				B8749300206C7520000FB4BB /* SellyClient.swift */,
 			);
 			path = Selly;
 			sourceTree = "<group>";
@@ -195,6 +187,15 @@
 				1FCC03CB203E3E2100B2EA26 /* Info.plist */,
 			);
 			path = SellyUITests;
+			sourceTree = "<group>";
+		};
+		B87492FD206C7301000FB4BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B87492FE206C730D000FB4BB /* User.swift */,
+				B8749302206C7EC1000FB4BB /* Item.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E7FF9708A2DA8935E3D1C7FC /* Pods */ = {
@@ -518,9 +519,12 @@
 			files = (
 				01CC4FF9204E0B1200D2EA41 /* LoginViewController.swift in Sources */,
 				01CC4FFD204E0BC200D2EA41 /* UploadViewController.swift in Sources */,
+				B8749301206C7520000FB4BB /* SellyClient.swift in Sources */,
 				1FCC03A9203E3E2000B2EA26 /* ViewController.swift in Sources */,
 				01CC4FFF204E0BEC00D2EA41 /* ChatViewController.swift in Sources */,
 				1FCC03A7203E3E2000B2EA26 /* AppDelegate.swift in Sources */,
+				B8749303206C7EC1000FB4BB /* Item.swift in Sources */,
+				B87492FF206C730D000FB4BB /* User.swift in Sources */,
 				1FCC03AF203E3E2100B2EA26 /* Selly.xcdatamodeld in Sources */,
 				01CC4FFB204E0B7600D2EA41 /* BrowseViewController.swift in Sources */,
 				01CC5001204E0BFF00D2EA41 /* DetailViewController.swift in Sources */,
