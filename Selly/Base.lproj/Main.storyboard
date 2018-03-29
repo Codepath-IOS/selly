@@ -248,6 +248,14 @@
                                 <rect key="frame" x="101" y="382" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhA-qZ-EIK">
+                                <rect key="frame" x="313" y="23" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onPost:" destination="9CJ-9N-MmQ" eventType="touchUpInside" id="qTZ-51-cmy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -264,6 +272,9 @@
                         <outlet property="image4" destination="qJl-6m-qa2" id="HCD-Sv-iwF"/>
                         <outlet property="image5" destination="H0K-Ag-xnl" id="wKA-nO-3F6"/>
                         <outlet property="image6" destination="ra4-mf-m48" id="NSI-4P-g4U"/>
+                        <outlet property="itemDescriptionTextField" destination="gAH-Zx-dUP" id="sds-O5-GbH"/>
+                        <outlet property="itemNameTextField" destination="mPw-gl-D42" id="ENq-I2-zio"/>
+                        <outlet property="itemPriceTextField" destination="EeC-yY-FEt" id="5Fn-cK-6bI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGP-DV-hEb" userLabel="First Responder" sceneMemberID="firstResponder"/>

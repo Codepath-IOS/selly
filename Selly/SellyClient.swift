@@ -15,6 +15,7 @@ class SellyClient {
     
     let userRef = Database.database().reference().child("users")
     let itemRef = Database.database().reference().child("items")
+    let itemPhotoRef = Storage.storage().reference().child("itemPhotos")
     
     func createFacebookUser(user: String, name: String, email: String, photo: String, success: @escaping (User) ->(), failure: @escaping (Error) ->()) {
         
@@ -52,6 +53,28 @@ class SellyClient {
                 success(Item(itemInfo: itemInfo))
             }
         }
+    }
+    
+    func uploadPhoto(itemPhotos: [UIImage], success: @escaping ([String]) ->(), failure: @escaping (Error) ->()) {
+        var photoURLs: [String] = []
+        var count = 0
+        for photo in itemPhotos {
+            count += 1
+            itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, metadata: nil, completion: { (metadata, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    failure(error)
+                    return
+                } else if let metadata = metadata {
+                    let downloadUrl = metadata.downloadURL()!.absoluteString
+                    photoURLs.append(downloadUrl)
+                    if count == itemPhotos.count {
+                        success(photoURLs)
+                    }
+                }
+            })
+        }
+        
     }
 }
 

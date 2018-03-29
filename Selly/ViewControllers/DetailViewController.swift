@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -32,6 +33,12 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var addImage6: UIImageView!
     @IBOutlet weak var addImage5: UIImageView!
     var imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var itemNameTextField: UITextField!
+    @IBOutlet weak var itemPriceTextField: UITextField!
+    
+    @IBOutlet weak var itemDescriptionTextField: UITextView!
+    
     
     weak var selectedImageView: UIImageView!
     weak var addImageView: UIImageView!
@@ -156,6 +163,41 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
+    @IBAction func onPost(_ sender: Any) {
+        var photos: [UIImage] = []
+        
+        if image1.image != nil {
+            photos.append(image1.image!)
+        }
+        if image2.image != nil {
+            photos.append(image2.image!)
+        }
+        if image3.image != nil {
+            photos.append(image4.image!)
+        }
+        if image4.image != nil {
+            photos.append(image4.image!)
+        }
+        if image5.image != nil {
+            photos.append(image5.image!)
+        }
+        if image6.image != nil {
+            photos.append(image6.image!)
+        }
+        if photos.count == 0{
+            return
+        }
+        
+        SellyClient.sharedInstance.uploadPhoto(itemPhotos: photos, success: { (photoURLs) in
+            SellyClient.sharedInstance.createItem(itemName: self.itemNameTextField.text!, itemPrice: self.itemPriceTextField.text!, itemCategory: "candy", itemDescription: self.itemDescriptionTextField.text!, uidSeller: Auth.auth().currentUser!.uid , itemPhotos: photoURLs, success: { (newItem) in
+                print(newItem.itemName)
+            }, failure: { (error) in
+                print(error.localizedDescription)
+            })
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     
     

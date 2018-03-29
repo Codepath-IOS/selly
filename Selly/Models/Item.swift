@@ -20,7 +20,7 @@ class Item: NSObject {
     
     init(itemInfo: [String: Any]) {
         itemId = itemInfo["itemId"] as! String
-        itemName = itemInfo["iteamName"] as! String
+        itemName = itemInfo["itemName"] as! String
         itemPrice = itemInfo["itemPrice"] as! String
         itemCategory = itemInfo["itemCategory"] as! String
         itemDescription = itemInfo["itemDescription"] as! String
