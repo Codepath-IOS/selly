@@ -160,9 +160,13 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITableView;
+@class UITableViewCell;
 
 SWIFT_CLASS("_TtC5Selly20DetailViewController")
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -172,6 +176,8 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 
 SWIFT_CLASS("_TtC5Selly19LoginViewController")
 @interface LoginViewController : UIViewController
+@property (nonatomic, copy) NSString * _Null_unspecified secret;
+@property (nonatomic, copy) NSString * _Null_unspecified appID;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)loginButton:(id _Nonnull)sender;
