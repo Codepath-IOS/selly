@@ -84,8 +84,19 @@ class SellyClient {
         }
     }
     
-    // *TODO : getItem function
+//    func getItemsList(itemsList: [String], success: @escaping (Item))
     
+    // *TODO : getItem function
+    func getItemInfo(items: String, success: @escaping (Item) ->(), failure: @escaping (Error)->()){
+        itemRef.child(items).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let itemInfo = snapshot.value as? [String: Any]{
+                success(Item(itemInfo: itemInfo))
+            }
+        })
+    }
+
+    
+
     
     
 }

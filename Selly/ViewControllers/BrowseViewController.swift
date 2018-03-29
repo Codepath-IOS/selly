@@ -56,15 +56,16 @@ class BrowseViewController: UIViewController {
                     // This causes first view to fade in and second view to fade out
                     self.itemImageView.center.x = 1000
                 })
-                databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
-                    for data in (snapshot.value as? NSDictionary)! {
-                        //print(data)
-                        let cc = data.value as! NSDictionary
-                        let name = cc["itemName"] as? String ?? ""
-                        let imageUrls = cc["itemPhotos"] as? [String]
-                        print(imageUrls)
-                    }
-                })
+//                databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+//                    for data in (snapshot.value as? NSDictionary)! {
+//                        //print(data)
+//                        let cc = data.value as! NSDictionary
+//                        let name = cc["itemName"] as? String ?? ""
+//                        let imageUrls = cc["itemPhotos"] as? [String]
+//                        print(imageUrls)
+//                    }
+//                })
+                
             }
             else if translation.x < -100{
                 print("swiped left")
