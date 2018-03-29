@@ -26,12 +26,15 @@ extension UIImage {
     }
 }
 
-class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
+    
+    @IBOutlet weak var charCountLabel: UILabel!
     
     @IBOutlet weak var image1: UIImageView!
     
     @IBOutlet weak var image2: UIImageView!
     
+    @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var image4: UIImageView!
     
     @IBOutlet weak var image3: UIImageView!
@@ -56,24 +59,39 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     
     @IBOutlet weak var itemDescriptionTextField: UITextView!
     
-    
+    var charCount = 0;
     weak var selectedImageView: UIImageView!
     weak var addImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let logo = UIImage(named: "selly.png")
+        let imageView = UIImageView(image:logo)
+        imageView.frame = CGRect(x: 0, y: 0, width: 10, height: 30)
+        self.navigationItem.titleView = imageView
         image1.isUserInteractionEnabled = true
         image2.isUserInteractionEnabled = true
         image3.isUserInteractionEnabled = true
         image4.isUserInteractionEnabled = true
         image5.isUserInteractionEnabled = true
         image6.isUserInteractionEnabled = true
+        itemDescriptionTextField.layer.cornerRadius = 8
+        itemDescriptionTextField.clipsToBounds = true
+        itemDescriptionTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        return charCount < 140 || text == ""
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        charCount = itemDescriptionTextField.text.characters.count
+        charCountLabel.text = "\(charCount)"
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

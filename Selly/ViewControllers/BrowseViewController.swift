@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
 
 class BrowseViewController: UIViewController {
-    
+    var databaseRef = Database.database().reference()
     var cardInitialCenter: CGPoint!
     var holdDefaultPosition: CGPoint!
     
@@ -18,6 +20,9 @@ class BrowseViewController: UIViewController {
     //@IBOutlet weak var userImageView: UIButton!
     @IBOutlet var gestureRecognizer: AnyObject!
     
+    @IBAction func rightButton(_ sender: Any) {
+        performSegue(withIdentifier: "right", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +55,15 @@ class BrowseViewController: UIViewController {
                 UIView.animate(withDuration:1, animations: {
                     // This causes first view to fade in and second view to fade out
                     self.itemImageView.center.x = 1000
+                })
+                databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+                    for data in (snapshot.value as? NSDictionary)! {
+                        //print(data)
+                        let cc = data.value as! NSDictionary
+                        let name = cc["itemName"] as? String ?? ""
+                        let imageUrls = cc["itemPhotos"] as? [String]
+                        print(imageUrls)
+                    }
                 })
             }
             else if translation.x < -100{
