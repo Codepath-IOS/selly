@@ -57,6 +57,14 @@ class SellyClient {
     
     func uploadPhoto(itemPhotos: [UIImage], success: @escaping ([String]) ->(), failure: @escaping (Error) ->()) {
         var photoURLs: [String] = []
+<<<<<<< HEAD
+        var count = 0
+        let myGroup = DispatchGroup()
+        for photo in itemPhotos {
+            count += 1
+            myGroup.enter()
+            itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, metadata: nil, completion: { (metadata, error) in
+=======
 //        var count = 0
         let myGroup = DispatchGroup()
 
@@ -64,6 +72,7 @@ class SellyClient {
 //            count += 1
             myGroup.enter()
 itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, metadata: nil, completion: { (metadata, error) in
+>>>>>>> b0657ad6d00335219c21b2e99ed165f1166ebffe
                 if let error = error {
                     print(error.localizedDescription)
                     failure(error)
@@ -71,6 +80,13 @@ itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, 
                 } else if let metadata = metadata {
                     let downloadUrl = metadata.downloadURL()!.absoluteString
                     photoURLs.append(downloadUrl)
+<<<<<<< HEAD
+                    //myGroup.leave()
+                    if count == itemPhotos.count {
+                        success(photoURLs)
+                        myGroup.leave()
+                    }
+=======
                     
                     myGroup.leave()
 
@@ -78,12 +94,19 @@ itemPhotoRef.child(UUID().uuidString).putData(UIImagePNGRepresentation(photo)!, 
 //                        success(photoURLs)
 //                    }
                     
+>>>>>>> b0657ad6d00335219c21b2e99ed165f1166ebffe
                 }
             })
         }
         myGroup.notify(queue: .main) {
+<<<<<<< HEAD
+            print("Finished all requests.")
+        }
+        
+=======
             success(photoURLs)
         }
+>>>>>>> b0657ad6d00335219c21b2e99ed165f1166ebffe
     }
     
     // *TODO : getItem function

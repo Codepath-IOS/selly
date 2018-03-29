@@ -26,7 +26,11 @@ class Item: NSObject {
         itemCategory = itemInfo["itemCategory"] as! String
         itemDescription = itemInfo["itemDescription"] as! String
         uidSeller = itemInfo["uidSeller"] as! String
+<<<<<<< HEAD
+        
+=======
         //itemPhotoURL = itemInfo["itemPhotoURL"] as! [String]
+>>>>>>> b0657ad6d00335219c21b2e99ed165f1166ebffe
     }
     
 }

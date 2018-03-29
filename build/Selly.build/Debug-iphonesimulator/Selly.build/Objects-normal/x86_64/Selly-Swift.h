@@ -163,6 +163,8 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 
 @class UIImagePickerController;
 @class UIImageView;
+@class UITextField;
+@class UITextView;
 
 SWIFT_CLASS("_TtC5Selly20DetailViewController")
 @interface DetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -179,6 +181,9 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage6;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified addImage5;
 @property (nonatomic, strong) UIImagePickerController * _Nonnull imagePicker;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified itemNameTextField;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified itemPriceTextField;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified itemDescriptionTextField;
 @property (nonatomic, weak) UIImageView * _Null_unspecified selectedImageView;
 @property (nonatomic, weak) UIImageView * _Null_unspecified addImageView;
 - (void)viewDidLoad;
@@ -190,6 +195,7 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 - (IBAction)uploadImage4:(id _Nonnull)sender;
 - (IBAction)uploadImage5:(id _Nonnull)sender;
 - (IBAction)uploadImage6:(id _Nonnull)sender;
+- (IBAction)onPost:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
