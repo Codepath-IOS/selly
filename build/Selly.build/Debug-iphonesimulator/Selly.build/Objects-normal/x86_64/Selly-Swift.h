@@ -144,6 +144,7 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 @class FIRDatabaseReference;
 @class UIPanGestureRecognizer;
+@class UILabel;
 @class UIButton;
 @class NSBundle;
 @class NSCoder;
@@ -151,12 +152,18 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @interface BrowseViewController : UIViewController
 @property (nonatomic, strong) FIRDatabaseReference * _Nonnull databaseRef;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified priceLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified titleLabel;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified itemImageView;
 @property (nonatomic, strong) IBOutlet id _Null_unspecified gestureRecognizer;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemID;
 - (IBAction)rightButton:(id _Nonnull)sender;
+- (void)getProduct;
 - (void)viewDidLoad;
 - (void)didPanWithSender:(UIPanGestureRecognizer * _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
+- (IBAction)likeButtonAction:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -173,7 +180,6 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 @class UIImagePickerController;
 @class UIImageView;
 @class UITextView;
-@class UILabel;
 @class UITextField;
 
 SWIFT_CLASS("_TtC5Selly20DetailViewController")

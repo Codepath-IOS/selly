@@ -6,35 +6,35 @@ provides-nominal:
 provides-member:
 - ["C5Selly11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillEnterForeground"
-- "window"
-- "applicationDidBecomeActive"
-- "persistentContainer"
-- "applicationWillTerminate"
-- "application"
-- "application"
 - "applicationWillResignActive"
-- "saveContext"
+- "applicationWillTerminate"
+- "persistentContainer"
+- "window"
 - "applicationDidEnterBackground"
+- "saveContext"
+- "applicationWillEnterForeground"
+- "application"
+- "application"
+- "applicationDidBecomeActive"
 depends-top-level:
-- "URL"
-- "UIResponder"
-- "UIWindow"
-- !private "BooleanLiteralType"
-- "NSPersistentContainer"
-- !private "StringLiteralType"
-- "UIApplicationLaunchOptionsKey"
-- !private "NSError"
-- "UIApplicationOpenURLOptionsKey"
-- "AppDelegate"
-- "CastingPrecedence"
-- !private "fatalError"
-- "Bool"
-- "UIApplication"
-- !private "FirebaseApp"
-- "Dictionary"
 - !private "FBSDKApplicationDelegate"
+- !private "BooleanLiteralType"
+- "UIApplicationOpenURLOptionsKey"
+- !private "NSError"
+- "UIApplication"
+- "UIApplicationLaunchOptionsKey"
 - "UIApplicationDelegate"
+- "UIResponder"
+- !private "StringLiteralType"
+- "CastingPrecedence"
+- "Dictionary"
+- "AppDelegate"
+- "URL"
+- !private "FirebaseApp"
+- "UIWindow"
+- "Bool"
+- "NSPersistentContainer"
+- !private "fatalError"
 depends-member:
 - !private ["Ps9AnyObject", "FBSDKApplicationDelegate"]
 - !private ["Ps9AnyObject", "FirebaseApp"]
@@ -465,6 +465,7 @@ depends-member:
 - !private ["Vs6UInt64", "deinit"]
 - !private ["Vs5UInt8", "deinit"]
 - ["V10Foundation3URL", "deinit"]
+- !private ["P9Alamofire14URLConvertible", "init"]
 - !private ["Sc", "deinit"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
@@ -571,6 +572,7 @@ depends-nominal:
 - !private "Vs6UInt64"
 - !private "Vs5UInt8"
 - "V10Foundation3URL"
+- !private "P9Alamofire14URLConvertible"
 - !private "Sc"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
@@ -719,4 +721,8 @@ depends-external:
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Kingfisher/Kingfisher.framework/Headers/Kingfisher-umbrella.h"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Kingfisher/Kingfisher.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
 interface-hash: "dfe2fc260b3ce8b22375d4d9926c32e9"

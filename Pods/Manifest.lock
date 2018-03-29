@@ -1,5 +1,8 @@
 PODS:
   - AACarousel (1.1.0)
+  - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -64,6 +67,8 @@ PODS:
 
 DEPENDENCIES:
   - AACarousel
+  - Alamofire
+  - AlamofireImage (~> 3.3)
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
@@ -73,6 +78,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AACarousel: 6131fa3650201a3ce10b6581621f3cade221b079
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
@@ -89,6 +96,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: cbc1a7b630afcf8358506de3dfe6ad830ff1300a
+PODFILE CHECKSUM: 8c915f0a7726ef8c4caa9795ab8fce5a39897dbf
 
 COCOAPODS: 1.4.0
