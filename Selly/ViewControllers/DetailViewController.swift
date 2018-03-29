@@ -8,6 +8,23 @@
 
 import UIKit
 
+extension UIImage {
+    enum JPEGQuality: CGFloat {
+        case lowest  = 0
+        case low     = 0.25
+        case medium  = 0.5
+        case high    = 0.75
+        case highest = 1
+    }
+    
+    /// Returns the data for the specified image in JPEG format.
+    /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
+    /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
+    func jpeg(_ quality: JPEGQuality) -> Data? {
+        return UIImageJPEGRepresentation(self, quality.rawValue)
+    }
+}
+
 class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var image1: UIImageView!
@@ -54,7 +71,13 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            selectedImageView.image = image
+            if let imageData = image.jpeg(.lowest) {
+                print(imageData.count)
+                let image = UIImage(data: imageData)
+                selectedImageView.image = image
+            }
+            
+            //selectedImageView.image = image
             addImageView.image = nil
         } else{
             print("Something went wrong")
@@ -155,6 +178,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
     
     
     
