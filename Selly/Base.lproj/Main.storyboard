@@ -124,31 +124,55 @@
                                 <rect key="frame" x="16" y="61" width="222" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61549872440920006" green="0.62309747409326421" blue="0.62309747409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vSq-s6-SL9" appends="YES" id="tHv-p4-kIT"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJl-6m-qa2">
                                 <rect key="frame" x="256" y="297" width="105" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61549872440920006" green="0.62309747409326421" blue="0.62309747409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pZD-ga-enr" appends="YES" id="r9i-H3-VfW"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZV0-Jc-egH">
                                 <rect key="frame" x="256" y="61" width="105" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61549872440920006" green="0.62309747409326421" blue="0.62309747409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="F4y-HZ-Q5B" appends="YES" id="Ex2-eM-19n"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpL-sq-k18">
                                 <rect key="frame" x="256" y="174" width="105" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61549872440920006" green="0.62309747409326421" blue="0.62309747409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pb8-iB-kzT" appends="YES" id="JD3-9k-cc3"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-Ag-xnl">
                                 <rect key="frame" x="136" y="297" width="105" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61549872440920006" green="0.62309747409326421" blue="0.62309747409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9XD-QG-r2Y" appends="YES" id="qGw-hm-M9T"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-mf-m48">
                                 <rect key="frame" x="16" y="297" width="105" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.61549872440920006" green="0.62309747409326421" blue="0.62309747409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ea0-bx-y2L" appends="YES" id="uOI-Cg-B75"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph3-zZ-O9y">
                                 <rect key="frame" x="156" y="24" width="63" height="21"/>
@@ -165,7 +189,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-gl-D42">
-                                <rect key="frame" x="122" y="414" width="97" height="30"/>
+                                <rect key="frame" x="122" y="414" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -194,26 +218,85 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeC-yY-FEt">
-                                <rect key="frame" x="122" y="449" width="97" height="30"/>
+                                <rect key="frame" x="122" y="449" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-Oh-fl0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add_circle" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-Oh-fl0">
                                 <rect key="frame" x="339" y="146" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQW-yY-mlT">
-                                <rect key="frame" x="304" y="23" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add_circle" translatesAutoresizingMaskIntoConstraints="NO" id="CoG-Hi-txn">
+                                <rect key="frame" x="339" y="259" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add_circle" translatesAutoresizingMaskIntoConstraints="NO" id="KY3-B9-eZ9">
+                                <rect key="frame" x="204" y="246" width="34" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add_circle" translatesAutoresizingMaskIntoConstraints="NO" id="qx7-AB-K2A">
+                                <rect key="frame" x="341" y="382" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add_circle" translatesAutoresizingMaskIntoConstraints="NO" id="rwe-Ay-7g4">
+                                <rect key="frame" x="221" y="382" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add_circle" translatesAutoresizingMaskIntoConstraints="NO" id="JPq-NH-eYz">
+                                <rect key="frame" x="101" y="382" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="addImage1" destination="KY3-B9-eZ9" id="1pl-vo-PEa"/>
+                        <outlet property="addImage2" destination="vhc-Oh-fl0" id="c2P-gS-DwH"/>
+                        <outlet property="addImage3" destination="CoG-Hi-txn" id="kE9-do-JBh"/>
+                        <outlet property="addImage4" destination="qx7-AB-K2A" id="NZ6-P4-AnQ"/>
+                        <outlet property="addImage5" destination="rwe-Ay-7g4" id="aQS-1u-OWw"/>
+                        <outlet property="addImage6" destination="JPq-NH-eYz" id="WDW-1E-EfU"/>
+                        <outlet property="image1" destination="blA-9s-yvY" id="V2X-8D-WaI"/>
+                        <outlet property="image2" destination="ZV0-Jc-egH" id="kIE-RS-bVg"/>
+                        <outlet property="image3" destination="qpL-sq-k18" id="iac-SD-aJb"/>
+                        <outlet property="image4" destination="qJl-6m-qa2" id="HCD-Sv-iwF"/>
+                        <outlet property="image5" destination="H0K-Ag-xnl" id="wKA-nO-3F6"/>
+                        <outlet property="image6" destination="ra4-mf-m48" id="NSI-4P-g4U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGP-DV-hEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vSq-s6-SL9">
+                    <connections>
+                        <action selector="uploadImage1:" destination="9CJ-9N-MmQ" id="9ch-Me-k20"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="F4y-HZ-Q5B">
+                    <connections>
+                        <action selector="uploadImage2:" destination="9CJ-9N-MmQ" id="5uD-qO-SNU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pb8-iB-kzT">
+                    <connections>
+                        <action selector="uploadImage3:" destination="9CJ-9N-MmQ" id="UYU-IZ-Moa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pZD-ga-enr">
+                    <connections>
+                        <action selector="uploadImage4:" destination="9CJ-9N-MmQ" id="7qH-lv-kc0"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9XD-QG-r2Y">
+                    <connections>
+                        <action selector="uploadImage5:" destination="9CJ-9N-MmQ" id="3yx-Qf-xhH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ea0-bx-y2L">
+                    <connections>
+                        <action selector="uploadImage6:" destination="9CJ-9N-MmQ" id="oyp-I3-5xL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1056.8" y="579.76011994002999"/>
         </scene>
@@ -238,6 +321,7 @@
     </scenes>
     <resources>
         <image name="fb_login_default" width="600" height="145"/>
+        <image name="ic_add_circle" width="24" height="24"/>
         <image name="selly-full-logo" width="644" height="940"/>
     </resources>
 </document>
