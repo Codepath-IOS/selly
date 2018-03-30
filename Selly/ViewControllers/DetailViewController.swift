@@ -41,7 +41,7 @@ class DetailViewController: UIViewController, AACarouselDelegate{
         //corouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
         //corouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
         itemDescription.clipsToBounds = true
-        itemDescription.sizeToFit()
+        //itemDescription.sizeToFit()
         itemName.text = itemTitle
         itemDescription.text = itemDesc
         itemPrice.text = price
