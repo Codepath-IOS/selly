@@ -164,6 +164,7 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerEmail;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerName;
 @property (nonatomic, strong) IBOutlet id _Null_unspecified gestureRecognizer;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified lastPageImage;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemID;
 @property (nonatomic, copy) NSString * _Nonnull itemName;
 @property (nonatomic, copy) NSString * _Nonnull itemCategory;

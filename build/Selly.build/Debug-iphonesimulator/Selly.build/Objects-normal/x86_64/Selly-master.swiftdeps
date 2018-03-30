@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "12af89fb2f3ca2dcb4e1f708168b0e21"
-build_time: [575696493, 974967000]
+build_time: [575697825, 993352000]
 inputs:
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/LoginViewController.swift": [575605024, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/UploadViewController.swift": [575696493, 0]
@@ -10,5 +10,5 @@ inputs:
   "/Users/SiD/Desktop/CS 490/Selly/Selly/AppDelegate.swift": [575510418, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/Models/Item.swift": [575676746, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/Models/User.swift": [575605024, 0]
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/BrowseViewController.swift": [575696493, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/BrowseViewController.swift": [575697825, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/DetailViewController.swift": [575696058, 0]

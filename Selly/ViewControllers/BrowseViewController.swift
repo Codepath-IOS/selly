@@ -28,12 +28,14 @@ class BrowseViewController: UIViewController {
     @IBOutlet weak var sellerName: UILabel!
     @IBOutlet var gestureRecognizer: AnyObject!
     
+    @IBOutlet weak var lastPageImage: UIImageView!
     var itemID: [String] = [] // keeps keys of items
     var itemName: String = ""
     var itemCategory: String = ""
     var itemDescription: String = ""
     var itemPrice: String = ""
     var itemURLS: [String] = []
+    var counter: Int!
     
     
     @IBAction func rightButton(_ sender: Any) {
@@ -47,6 +49,7 @@ class BrowseViewController: UIViewController {
             }
             for data in (snapshot.value as? NSDictionary)! {
                 if(self.itemID.contains(data.key as! String)) {
+                    
                     continue
                 } else {
                     let cc = data.value as! NSDictionary
@@ -73,6 +76,7 @@ class BrowseViewController: UIViewController {
                     self.sellerEmail.text = sellerEmail
                     self.sellerName.text = sellerName
                     self.sellerImage.af_setImage(withURL: sellerUrl!)
+                    self.counter = 1;
                     break
                 }
             }
@@ -83,6 +87,7 @@ class BrowseViewController: UIViewController {
         super.viewDidLoad()
         getProduct()
         // Attach panGestureREcognizer to a view
+        
         itemImageView.imageView?.layer.cornerRadius = 7
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
