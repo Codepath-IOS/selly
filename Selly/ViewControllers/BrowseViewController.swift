@@ -104,14 +104,14 @@ class BrowseViewController: UIViewController {
         
         if sender.state == .began {
             print("Gesture began")
-            
-        } else if sender.state == .changed {
+        }
+        else if sender.state == .changed {
             itemImageView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / 8) * (translation.x * 0.01))
             itemImageView.center.x = cardInitialCenter.x + translation.x
             itemImageView.center.y = cardInitialCenter.y + translation.y
             //print("Gesture changing")
-            
-        } else if sender.state == .ended {
+        }
+        else if sender.state == .ended {
             if translation.x > 100{
                 print("swiped right")
                 getProduct()
@@ -142,37 +142,8 @@ class BrowseViewController: UIViewController {
                     self.itemImageView.center.x = self.holdDefaultPosition.x
                     self.itemImageView.center.y = self.holdDefaultPosition.y
                 })
-
             }
             print("Gesture has ended")
-                      /*
-            let location = sender.location(in: view)
-            if sender.state == .began {
-                cardInitialCenter = itemImageView.center
-                print("Gesture began")
-             } else if sender.state == .changed {
-                if (location.y < itemImageView.frame.height/2)
-                { itemImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
-                    itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 560))
-                }
-                else {
-                    itemImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
-                    itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(-1.0 * Double(translation.x) * M_PI / 560))
-                }
-                
-                if(translation.x > 175 || translation.x < -175) {
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.itemImageView.alpha = 0
-                    })
-                }
-                print("Gesture is changing")
-             } else if sender.state == .ended {
-                itemImageView.center = CGPoint(x: cardInitialCenter.x, y: cardInitialCenter.y)
-                itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
-                print("Gesture ended")
-            }
-            print("Gesture has ended")
-            */
         }
         
    
