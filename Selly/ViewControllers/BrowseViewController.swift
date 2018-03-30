@@ -30,6 +30,7 @@ class BrowseViewController: UIViewController {
     
     var itemID: [String] = [] // keeps keys of items
     var itemName: String = ""
+    var itemCategory: String = ""
     var itemDescription: String = ""
     var itemPrice: String = ""
     var itemURLS: [String] = []
@@ -219,7 +220,10 @@ class BrowseViewController: UIViewController {
             VC?.price = priceLabel.text
             VC?.itemURLS = itemURLS
             VC?.itemDesc = itemDescription
+            VC?.category = categoryLabel.text
+            
         }
+        
      }
     
     
