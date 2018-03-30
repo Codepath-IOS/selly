@@ -1,6 +1,6 @@
 
 //
-//  DetailViewController.swift
+//  UploadViewController.swift
 //  Selly
 //
 //  Created by NICK on 3/5/18.

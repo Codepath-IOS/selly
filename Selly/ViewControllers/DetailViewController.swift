@@ -1,3 +1,11 @@
+//
+//  DetailViewController.swift
+//  Selly
+//
+//  Created by NICK on 3/5/18.
+//  Copyright © 2018 siddhant. All rights reserved.
+//
+
 import UIKit
 import AACarousel
 import Firebase
