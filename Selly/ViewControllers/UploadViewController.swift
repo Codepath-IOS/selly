@@ -14,6 +14,7 @@ import Kingfisher
 
 class UploadViewController: UIViewController, AACarouselDelegate{
 
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemDescription: UILabel!
       let databaseRef = Database.database().reference()
@@ -28,6 +29,7 @@ class UploadViewController: UIViewController, AACarouselDelegate{
     var itemTitle: String?
     var itemDesc: String?
     var price: String?
+    var category: String?
     
     @IBOutlet weak var lineLabel: UILabel!
     
@@ -43,6 +45,7 @@ class UploadViewController: UIViewController, AACarouselDelegate{
         itemName.text = itemTitle
         itemDescription.text = itemDesc
         itemPrice.text = price
+        categoryLabel.text = category
         
     }
     override func viewDidLoad() {

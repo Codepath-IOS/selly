@@ -166,6 +166,7 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @property (nonatomic, strong) IBOutlet id _Null_unspecified gestureRecognizer;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemID;
 @property (nonatomic, copy) NSString * _Nonnull itemName;
+@property (nonatomic, copy) NSString * _Nonnull itemCategory;
 @property (nonatomic, copy) NSString * _Nonnull itemDescription;
 @property (nonatomic, copy) NSString * _Nonnull itemPrice;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
@@ -278,6 +279,7 @@ SWIFT_CLASS("_TtC5Selly19LoginViewController")
 
 SWIFT_CLASS("_TtC5Selly20UploadViewController")
 @interface UploadViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemName;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemDescription;
 @property (nonatomic, readonly, strong) FIRDatabaseReference * _Nonnull databaseRef;
@@ -288,6 +290,7 @@ SWIFT_CLASS("_TtC5Selly20UploadViewController")
 @property (nonatomic, copy) NSString * _Nullable itemTitle;
 @property (nonatomic, copy) NSString * _Nullable itemDesc;
 @property (nonatomic, copy) NSString * _Nullable price;
+@property (nonatomic, copy) NSString * _Nullable category;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lineLabel;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;

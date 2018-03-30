@@ -99,6 +99,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="dV8-D0-0wg"/>
                     <connections>
+                        <outlet property="categoryLabel" destination="Z4y-kq-G86" id="x54-tT-9ix"/>
                         <outlet property="corouselView" destination="MQu-TX-ldJ" id="Tq8-t1-AVg"/>
                         <outlet property="itemDescription" destination="ffk-0Q-8r6" id="VEJ-pN-0X4"/>
                         <outlet property="itemName" destination="wQi-fF-OAl" id="p6D-dl-0Ai"/>
