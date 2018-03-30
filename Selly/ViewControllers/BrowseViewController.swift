@@ -185,7 +185,7 @@ class BrowseViewController: UIViewController {
             
             //let desViewController = segue.destination as? UINavigationController
             //let VC = desViewController?.viewControllers.first as? UploadViewController
-            let VC = segue.destination as? UploadViewController
+            let VC = segue.destination as? DetailViewController
             //print(titleLabel.text)
             VC?.itemTitle = titleLabel.text
             VC?.price = priceLabel.text

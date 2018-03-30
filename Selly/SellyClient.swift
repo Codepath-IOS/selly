@@ -94,6 +94,7 @@ class SellyClient {
     func getItemInfo(items: String, success: @escaping (Item) ->(), failure: @escaping (Error)->()){
         itemRef.child(items).observeSingleEvent(of: .value, with: { (snapshot) in
             if let itemInfo = snapshot.value as? [String: Any]{
+                print(itemInfo)
                 success(Item(itemInfo: itemInfo))
             }
         })
