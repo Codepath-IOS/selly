@@ -41,9 +41,13 @@ class SellyClient {
     }
     
     func createItem(itemName: String, itemPrice: String, itemCategory: String, itemDescription: String, uidSeller: String, itemPhotos: [String], success: @escaping (Item) ->(), failure: @escaping (Error) ->()) {
-        
+        let sellerName: String = (Auth.auth().currentUser?.displayName)!
+        //let sellerPhotoURL: URL = (Auth.auth().currentUser?.photoURL)!
+        let sellerPhotoUrl: String = (Auth.auth().currentUser?.photoURL)!.absoluteString
+        let sellerEmail: String = (Auth.auth().currentUser?.email)!
+
         let newItemRef = self.itemRef.childByAutoId()
-        let itemInfo = ["itemId": newItemRef.key, "itemName": itemName, "itemPrice": itemPrice, "itemCategory": itemCategory, "itemDescription": itemDescription, "uidSeller": uidSeller, "createdTimeStamp": Date().timeIntervalSince1970, "updatedTimeStamp": Date().timeIntervalSince1970, "itemPhotos": itemPhotos] as [String : Any]
+        let itemInfo = ["itemId": newItemRef.key, "itemName": itemName, "itemPrice": itemPrice, "itemCategory": itemCategory, "itemDescription": itemDescription, "uidSeller": uidSeller, "createdTimeStamp": Date().timeIntervalSince1970, "updatedTimeStamp": Date().timeIntervalSince1970, "itemPhotos": itemPhotos, "sellerName": sellerName, "sellerImageURL": sellerPhotoUrl, "sellerEmail": sellerEmail] as [String : Any]
         
         newItemRef.setValue(itemInfo) { (error, reference) in
             if let error = error {

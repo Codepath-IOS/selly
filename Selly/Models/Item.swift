@@ -18,6 +18,9 @@ class Item: NSObject {
     var createdTimeStamp: Double!
     var updatedTimeStamp: Double!
     //var itemPhotoURL : [String]!
+    var sellerName: String!
+    var sellerImageURL: String!
+    var sellerEmail: String!
     
     init(itemInfo: [String: Any]) {
         itemId = itemInfo["itemId"] as! String
@@ -26,6 +29,9 @@ class Item: NSObject {
         itemCategory = itemInfo["itemCategory"] as! String
         itemDescription = itemInfo["itemDescription"] as! String
         uidSeller = itemInfo["uidSeller"] as! String
+        sellerName = itemInfo["sellerName"] as! String
+        sellerImageURL = itemInfo["sellerImageURL"] as! String
+        sellerEmail = itemInfo["sellerEmail"] as! String
       //  itemPhotoURL = itemInfo["itemPhotoURL"] as! [String]
     }
    
