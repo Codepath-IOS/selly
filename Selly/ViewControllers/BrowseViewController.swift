@@ -56,8 +56,8 @@ class BrowseViewController: UIViewController {
                 }
             }
         })
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,7 +85,7 @@ class BrowseViewController: UIViewController {
             itemImageView.center.y = cardInitialCenter.y + translation.y
             //print("Gesture changing")
         } else if sender.state == .ended {
-            /*if translation.x > 100{
+            if translation.x > 100{
                 print("swiped right")
                  getProduct()
                 UIView.animate(withDuration:1, animations: {
@@ -108,7 +108,8 @@ class BrowseViewController: UIViewController {
                     self.itemImageView.center.x = self.holdDefaultPosition.x
                     self.itemImageView.center.y = self.holdDefaultPosition.y
                 })
-             }*/
+             }
+            /*
             let location = sender.location(in: view)
             if sender.state == .began {
                 cardInitialCenter = itemImageView.center
@@ -134,7 +135,8 @@ class BrowseViewController: UIViewController {
                 itemImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
                 print("Gesture ended")
             }
-            print("Gesture has ended")            
+            print("Gesture has ended")
+            */
         }
     }
     
