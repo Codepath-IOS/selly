@@ -49,42 +49,37 @@ extension UIImage {
         return result
     }
 }
-class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var charCountLabel: UILabel!
     
     @IBOutlet weak var image1: UIImageView!
-    
     @IBOutlet weak var image2: UIImageView!
-    
-    @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var image4: UIImageView!
-    
     @IBOutlet weak var image3: UIImageView!
-
     @IBOutlet weak var image5: UIImageView!
-    
     @IBOutlet weak var image6: UIImageView!
     
     @IBOutlet weak var addImage1: UIImageView!
     @IBOutlet weak var addImage2: UIImageView!
-    
     @IBOutlet weak var addImage3: UIImageView!
-    
     @IBOutlet weak var addImage4: UIImageView!
-    
     @IBOutlet weak var addImage6: UIImageView!
     @IBOutlet weak var addImage5: UIImageView!
     var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemPriceTextField: UITextField!
-    
+    @IBOutlet weak var itemCategoryTextField: UITextField!
     @IBOutlet weak var itemDescriptionTextField: UITextView!
    
     var charCount = 0;
     weak var selectedImageView: UIImageView!
     weak var addImageView: UIImageView!
+    
+    let categoryList = ["Electronics",  "Clothing & accessories",  "Home & Garden", "Entertainment", "Housing", "Other"]
+    var pickerView = UIPickerView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,10 +93,18 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         image4.isUserInteractionEnabled = true
         image5.isUserInteractionEnabled = true
         image6.isUserInteractionEnabled = true
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        itemCategoryTextField.inputView = pickerView
+        itemCategoryTextField.textAlignment = .center
+        itemCategoryTextField.placeholder = "Select Category"
+        
         itemDescriptionTextField.layer.cornerRadius = 8
         itemDescriptionTextField.clipsToBounds = true
         itemDescriptionTextField.delegate = self
-        // Do any additional setup after loading the view.
+        
+        
         resizeImages(image: image1)
         resizeImages(image: image2)
         resizeImages(image: image3)
@@ -109,6 +112,24 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         resizeImages(image: image5)
         resizeImages(image: image6)
         
+    }
+    
+    // Picker View : Dropdown Caetegory
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categoryList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        itemCategoryTextField.text = categoryList[row]
+        itemCategoryTextField.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
