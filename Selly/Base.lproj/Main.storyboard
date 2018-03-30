@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="2133.5999999999999" y="-454.72263868065971"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Upload-->
         <scene sceneID="0G7-zc-yGS">
             <objects>
-                <viewController id="9CJ-9N-MmQ" customClass="DetailViewController" customModule="Selly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9CJ-9N-MmQ" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jWv-iw-eC9"/>
                         <viewControllerLayoutGuide type="bottom" id="zmi-p6-o7j"/>
@@ -280,7 +280,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KGi-2N-831">
+                    <navigationItem key="navigationItem" title="Upload" id="KGi-2N-831">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="kud-q1-uoM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m1n-hS-9ca">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -346,7 +346,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1829.5999999999999" y="554.57271364317842"/>
+            <point key="canvasLocation" x="2134" y="564"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="KXu-8g-EE5">
@@ -365,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFB-Tw-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2759" y="353"/>
+            <point key="canvasLocation" x="3383" y="155"/>
         </scene>
         <!--Selly-->
         <scene sceneID="V7W-wI-2g3">
