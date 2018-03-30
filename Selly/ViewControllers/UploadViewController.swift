@@ -8,16 +8,20 @@
 
 import UIKit
 import AACarousel
+import Firebase
+import FirebaseDatabase
 import Kingfisher
 
 class UploadViewController: UIViewController, AACarouselDelegate{
 
     @IBOutlet weak var itemName: UILabel!
-    
     @IBOutlet weak var itemDescription: UILabel!
+      let databaseRef = Database.database().reference()
+
     
     @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var corouselView: AACarousel!
+
     var itemURLS: [String] = []
     var titleArray = [String]()
     
@@ -44,11 +48,38 @@ class UploadViewController: UIViewController, AACarouselDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         titleArray = [""]
         
     }
     
-    
+//    func getItemImages() {
+//        databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+//            for data in (snapshot.value as? NSDictionary)! {
+//                if(self.itemID.contains(data.key as! String)) {
+//                    continue
+//                } else {
+//                    let cc = data.value as! NSDictionary
+//                    let name = cc["itemName"] as? String ?? ""
+//                    let imageUrls = cc["itemPhotos"] as? [String]
+//                    let itemPirce = cc["itemPrice"] as? String!
+//                    let itemCategory = cc["itemCategory"] as? String!
+//
+//                    // storing itemID as key
+//                    self.itemID.append((cc["itemId"] as? String!)!)
+//                    let url = URL(string: (imageUrls?[0])!)
+//                    print(url)
+//
+//                    // set image, name, price, category
+//
+//                    self.titleLabel.text = name
+//                    self.priceLabel.text = itemPirce
+//                    self.categoryLabel.text = itemCategory
+//                    break
+//                }
+//            }
+//        })
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
