@@ -45,7 +45,7 @@ class BrowseViewController: UIViewController {
                     // storing itemID as key
                     self.itemID.append((cc["itemId"] as? String!)!)
                     let url = URL(string: (imageUrls?[0])!)
-                    print(url)
+//                    print(url)
                     
                     // set image, name, price, category
                     self.itemImageView.af_setImage(for: .normal, url: url!)
@@ -80,12 +80,10 @@ class BrowseViewController: UIViewController {
             print("Gesture began")
             
         } else if sender.state == .changed {
-            
             itemImageView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / 8) * (translation.x * 0.01))
             itemImageView.center.x = cardInitialCenter.x + translation.x
             itemImageView.center.y = cardInitialCenter.y + translation.y
             //print("Gesture changing")
-            
         } else if sender.state == .ended {
             if translation.x > 100{
                 print("swiped right")
