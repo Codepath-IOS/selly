@@ -193,13 +193,74 @@ SWIFT_CLASS("_TtC5Selly18ChatViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AACarousel;
+
+SWIFT_CLASS("_TtC5Selly20DetailViewController")
+@interface DetailViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemDescription;
+@property (nonatomic, readonly, strong) FIRDatabaseReference * _Nonnull databaseRef;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemPrice;
+@property (nonatomic, weak) IBOutlet AACarousel * _Null_unspecified corouselView;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull titleArray;
+@property (nonatomic, copy) NSString * _Nullable itemTitle;
+@property (nonatomic, copy) NSString * _Nullable itemDesc;
+@property (nonatomic, copy) NSString * _Nullable price;
+@property (nonatomic, copy) NSString * _Nullable category;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lineLabel;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)downloadImages:(NSString * _Nonnull)url :(NSInteger)index;
+- (void)didSelectCarouselView:(AACarousel * _Nonnull)view :(NSInteger)index;
+- (void)callBackFirstDisplayView:(UIImageView * _Nonnull)imageView :(NSArray<NSString *> * _Nonnull)url :(NSInteger)index;
+- (void)startAutoScroll;
+- (void)stopAutoScroll;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Selly4Item")
+@interface Item : NSObject
+@property (nonatomic, copy) NSString * _Null_unspecified itemId;
+@property (nonatomic, copy) NSString * _Null_unspecified itemName;
+@property (nonatomic, copy) NSString * _Null_unspecified itemPrice;
+@property (nonatomic, copy) NSString * _Null_unspecified itemCategory;
+@property (nonatomic, copy) NSString * _Null_unspecified itemDescription;
+@property (nonatomic, copy) NSString * _Null_unspecified uidSeller;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerName;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerImageURL;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerEmail;
+- (nonnull instancetype)initWithItemInfo:(NSDictionary<NSString *, id> * _Nonnull)itemInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC5Selly19LoginViewController")
+@interface LoginViewController : UIViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (IBAction)loginButton:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface UIImage (SWIFT_EXTENSION(Selly))
+- (UIImage * _Nullable)resizeWithPercentWithPercentage:(CGFloat)percentage;
+- (UIImage * _Nullable)resizeWithWidthWithWidth:(CGFloat)width;
+@end
+
 @class UIImagePickerController;
 @class UIPickerView;
 @class UITextView;
 @class UITextField;
 
-SWIFT_CLASS("_TtC5Selly20DetailViewController")
-@interface DetailViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate>
+SWIFT_CLASS("_TtC5Selly20UploadViewController")
+@interface UploadViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified charCountLabel;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image1;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified image2;
@@ -240,67 +301,6 @@ SWIFT_CLASS("_TtC5Selly20DetailViewController")
 - (IBAction)uploadImage5:(id _Nonnull)sender;
 - (IBAction)uploadImage6:(id _Nonnull)sender;
 - (IBAction)onPost:(id _Nonnull)sender;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC5Selly4Item")
-@interface Item : NSObject
-@property (nonatomic, copy) NSString * _Null_unspecified itemId;
-@property (nonatomic, copy) NSString * _Null_unspecified itemName;
-@property (nonatomic, copy) NSString * _Null_unspecified itemPrice;
-@property (nonatomic, copy) NSString * _Null_unspecified itemCategory;
-@property (nonatomic, copy) NSString * _Null_unspecified itemDescription;
-@property (nonatomic, copy) NSString * _Null_unspecified uidSeller;
-@property (nonatomic, copy) NSString * _Null_unspecified sellerName;
-@property (nonatomic, copy) NSString * _Null_unspecified sellerImageURL;
-@property (nonatomic, copy) NSString * _Null_unspecified sellerEmail;
-- (nonnull instancetype)initWithItemInfo:(NSDictionary<NSString *, id> * _Nonnull)itemInfo OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC5Selly19LoginViewController")
-@interface LoginViewController : UIViewController
-- (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
-- (IBAction)loginButton:(id _Nonnull)sender;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface UIImage (SWIFT_EXTENSION(Selly))
-- (UIImage * _Nullable)resizeWithPercentWithPercentage:(CGFloat)percentage;
-- (UIImage * _Nullable)resizeWithWidthWithWidth:(CGFloat)width;
-@end
-
-@class AACarousel;
-
-SWIFT_CLASS("_TtC5Selly20UploadViewController")
-@interface UploadViewController : UIViewController
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemName;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemDescription;
-@property (nonatomic, readonly, strong) FIRDatabaseReference * _Nonnull databaseRef;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified itemPrice;
-@property (nonatomic, weak) IBOutlet AACarousel * _Null_unspecified corouselView;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull titleArray;
-@property (nonatomic, copy) NSString * _Nullable itemTitle;
-@property (nonatomic, copy) NSString * _Nullable itemDesc;
-@property (nonatomic, copy) NSString * _Nullable price;
-@property (nonatomic, copy) NSString * _Nullable category;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lineLabel;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
-- (void)downloadImages:(NSString * _Nonnull)url :(NSInteger)index;
-- (void)didSelectCarouselView:(AACarousel * _Nonnull)view :(NSInteger)index;
-- (void)callBackFirstDisplayView:(UIImageView * _Nonnull)imageView :(NSArray<NSString *> * _Nonnull)url :(NSInteger)index;
-- (void)startAutoScroll;
-- (void)stopAutoScroll;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

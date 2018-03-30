@@ -6,39 +6,47 @@ provides-nominal:
 provides-member:
 - ["C5Selly11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillResignActive"
+- "saveContext"
+- "applicationWillEnterForeground"
 - "applicationWillTerminate"
 - "persistentContainer"
 - "window"
-- "applicationDidEnterBackground"
-- "saveContext"
-- "applicationWillEnterForeground"
-- "application"
-- "application"
 - "applicationDidBecomeActive"
+- "application"
+- "application"
+- "applicationWillResignActive"
+- "applicationDidEnterBackground"
 depends-top-level:
 - !private "FBSDKApplicationDelegate"
-- !private "BooleanLiteralType"
-- "UIApplicationOpenURLOptionsKey"
-- !private "NSError"
-- "UIApplication"
-- "UIApplicationLaunchOptionsKey"
-- "UIApplicationDelegate"
-- "UIResponder"
 - !private "StringLiteralType"
-- "CastingPrecedence"
-- "Dictionary"
-- "AppDelegate"
+- !private "NSError"
 - "URL"
-- !private "FirebaseApp"
-- "UIWindow"
-- "Bool"
-- "NSPersistentContainer"
+- "UIApplicationOpenURLOptionsKey"
+- "UIApplicationLaunchOptionsKey"
+- !private "BooleanLiteralType"
+- "UIApplicationDelegate"
+- !private "IQKeyboardManager"
+- !private "UIStoryboard"
 - !private "fatalError"
+- "UIWindow"
+- !private "Auth"
+- "NSPersistentContainer"
+- "Dictionary"
+- "UIApplication"
+- !private "FirebaseApp"
+- "AssignmentPrecedence"
+- "UIResponder"
+- "AppDelegate"
+- "CastingPrecedence"
+- "Bool"
+- !private "!="
 depends-member:
+- !private ["Ps9AnyObject", "Auth"]
 - !private ["Ps9AnyObject", "FBSDKApplicationDelegate"]
 - !private ["Ps9AnyObject", "FirebaseApp"]
+- !private ["Ps9AnyObject", "IQKeyboardManager"]
 - !private ["Ps9AnyObject", "NSPersistentContainer"]
+- !private ["Ps9AnyObject", "UIStoryboard"]
 - ["Ps9AnyObject", "application"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
 - ["Ps9AnyObject", "applicationDidEnterBackground"]
@@ -51,28 +59,37 @@ depends-member:
 - ["Ps9AnyObject", "applicationWillEnterForeground"]
 - ["Ps9AnyObject", "applicationWillResignActive"]
 - ["Ps9AnyObject", "applicationWillTerminate"]
+- !private ["Ps9AnyObject", "auth"]
 - !private ["Ps9AnyObject", "configure"]
+- !private ["Ps9AnyObject", "currentUser"]
+- !private ["Ps9AnyObject", "enable"]
 - !private ["Ps9AnyObject", "fatalError"]
 - !private ["Ps9AnyObject", "hasChanges"]
 - !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "instantiateViewController"]
 - !private ["Ps9AnyObject", "loadPersistentStores"]
 - ["Ps9AnyObject", "persistentContainer"]
 - ["Ps9AnyObject", "persistentContainer.storage"]
+- !private ["Ps9AnyObject", "rootViewController"]
 - !private ["Ps9AnyObject", "save"]
 - ["Ps9AnyObject", "saveContext"]
 - !private ["Ps9AnyObject", "sharedInstance"]
+- !private ["Ps9AnyObject", "sharedManager"]
 - !private ["Ps9AnyObject", "userInfo"]
 - !private ["Ps9AnyObject", "viewContext"]
 - ["Ps9AnyObject", "window"]
 - ["Ps9AnyObject", ""]
+- !private ["C5Selly11AppDelegate", "Auth"]
 - ["C5Selly11AppDelegate", "Bool"]
 - !private ["C5Selly11AppDelegate", "FBSDKApplicationDelegate"]
 - !private ["C5Selly11AppDelegate", "FirebaseApp"]
+- !private ["C5Selly11AppDelegate", "IQKeyboardManager"]
 - !private ["C5Selly11AppDelegate", "NSError"]
 - ["C5Selly11AppDelegate", "NSPersistentContainer"]
 - ["C5Selly11AppDelegate", "UIApplication"]
 - ["C5Selly11AppDelegate", "UIApplicationLaunchOptionsKey"]
 - ["C5Selly11AppDelegate", "UIApplicationOpenURLOptionsKey"]
+- !private ["C5Selly11AppDelegate", "UIStoryboard"]
 - ["C5Selly11AppDelegate", "UIWindow"]
 - ["C5Selly11AppDelegate", "URL"]
 - ["C5Selly11AppDelegate", "application"]
@@ -94,12 +111,19 @@ depends-member:
 - !private ["C5Selly11AppDelegate", "persistentContainer.storage"]
 - ["C5Selly11AppDelegate", "saveContext"]
 - ["C5Selly11AppDelegate", "window"]
+- !private ["CSo4Auth", "auth"]
+- !private ["CSo4Auth", "currentUser"]
+- ["CSo4Auth", "deinit"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]
+- !private ["PSo15CALayerDelegate", "rootViewController"]
+- !private ["Ps7CVarArg", "Auth"]
 - !private ["Ps7CVarArg", "FBSDKApplicationDelegate"]
 - !private ["Ps7CVarArg", "FirebaseApp"]
+- !private ["Ps7CVarArg", "IQKeyboardManager"]
 - !private ["Ps7CVarArg", "Key"]
 - !private ["Ps7CVarArg", "NSPersistentContainer"]
+- !private ["Ps7CVarArg", "UIStoryboard"]
 - !private ["Ps7CVarArg", "Value"]
 - ["Ps7CVarArg", "application"]
 - ["Ps7CVarArg", "applicationDidBecomeActive"]
@@ -113,16 +137,22 @@ depends-member:
 - ["Ps7CVarArg", "applicationWillEnterForeground"]
 - ["Ps7CVarArg", "applicationWillResignActive"]
 - ["Ps7CVarArg", "applicationWillTerminate"]
+- !private ["Ps7CVarArg", "auth"]
 - !private ["Ps7CVarArg", "configure"]
+- !private ["Ps7CVarArg", "currentUser"]
+- !private ["Ps7CVarArg", "enable"]
 - !private ["Ps7CVarArg", "fatalError"]
 - !private ["Ps7CVarArg", "hasChanges"]
 - !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "instantiateViewController"]
 - !private ["Ps7CVarArg", "loadPersistentStores"]
 - ["Ps7CVarArg", "persistentContainer"]
 - ["Ps7CVarArg", "persistentContainer.storage"]
+- !private ["Ps7CVarArg", "rootViewController"]
 - !private ["Ps7CVarArg", "save"]
 - ["Ps7CVarArg", "saveContext"]
 - !private ["Ps7CVarArg", "sharedInstance"]
+- !private ["Ps7CVarArg", "sharedManager"]
 - !private ["Ps7CVarArg", "userInfo"]
 - !private ["Ps7CVarArg", "viewContext"]
 - ["Ps7CVarArg", "window"]
@@ -131,10 +161,13 @@ depends-member:
 - !private ["Ps10Collection", "Key"]
 - !private ["Ps10Collection", "Value"]
 - !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "Auth"]
 - !private ["Ps28CustomDebugStringConvertible", "FBSDKApplicationDelegate"]
 - !private ["Ps28CustomDebugStringConvertible", "FirebaseApp"]
+- !private ["Ps28CustomDebugStringConvertible", "IQKeyboardManager"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
 - !private ["Ps28CustomDebugStringConvertible", "NSPersistentContainer"]
+- !private ["Ps28CustomDebugStringConvertible", "UIStoryboard"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - ["Ps28CustomDebugStringConvertible", "application"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
@@ -148,16 +181,22 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "applicationWillEnterForeground"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillTerminate"]
+- !private ["Ps28CustomDebugStringConvertible", "auth"]
 - !private ["Ps28CustomDebugStringConvertible", "configure"]
+- !private ["Ps28CustomDebugStringConvertible", "currentUser"]
+- !private ["Ps28CustomDebugStringConvertible", "enable"]
 - !private ["Ps28CustomDebugStringConvertible", "fatalError"]
 - !private ["Ps28CustomDebugStringConvertible", "hasChanges"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "instantiateViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "loadPersistentStores"]
 - ["Ps28CustomDebugStringConvertible", "persistentContainer"]
 - ["Ps28CustomDebugStringConvertible", "persistentContainer.storage"]
+- !private ["Ps28CustomDebugStringConvertible", "rootViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "save"]
 - ["Ps28CustomDebugStringConvertible", "saveContext"]
 - !private ["Ps28CustomDebugStringConvertible", "sharedInstance"]
+- !private ["Ps28CustomDebugStringConvertible", "sharedManager"]
 - !private ["Ps28CustomDebugStringConvertible", "userInfo"]
 - !private ["Ps28CustomDebugStringConvertible", "viewContext"]
 - ["Ps28CustomDebugStringConvertible", "window"]
@@ -168,10 +207,13 @@ depends-member:
 - !private ["Ps17CustomReflectable", "Value"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps23CustomStringConvertible", "Auth"]
 - !private ["Ps23CustomStringConvertible", "FBSDKApplicationDelegate"]
 - !private ["Ps23CustomStringConvertible", "FirebaseApp"]
+- !private ["Ps23CustomStringConvertible", "IQKeyboardManager"]
 - !private ["Ps23CustomStringConvertible", "Key"]
 - !private ["Ps23CustomStringConvertible", "NSPersistentContainer"]
+- !private ["Ps23CustomStringConvertible", "UIStoryboard"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps23CustomStringConvertible", "application"]
@@ -186,16 +228,22 @@ depends-member:
 - ["Ps23CustomStringConvertible", "applicationWillEnterForeground"]
 - ["Ps23CustomStringConvertible", "applicationWillResignActive"]
 - ["Ps23CustomStringConvertible", "applicationWillTerminate"]
+- !private ["Ps23CustomStringConvertible", "auth"]
 - !private ["Ps23CustomStringConvertible", "configure"]
+- !private ["Ps23CustomStringConvertible", "currentUser"]
+- !private ["Ps23CustomStringConvertible", "enable"]
 - !private ["Ps23CustomStringConvertible", "fatalError"]
 - !private ["Ps23CustomStringConvertible", "hasChanges"]
 - !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "instantiateViewController"]
 - !private ["Ps23CustomStringConvertible", "loadPersistentStores"]
 - ["Ps23CustomStringConvertible", "persistentContainer"]
 - ["Ps23CustomStringConvertible", "persistentContainer.storage"]
+- !private ["Ps23CustomStringConvertible", "rootViewController"]
 - !private ["Ps23CustomStringConvertible", "save"]
 - ["Ps23CustomStringConvertible", "saveContext"]
 - !private ["Ps23CustomStringConvertible", "sharedInstance"]
+- !private ["Ps23CustomStringConvertible", "sharedManager"]
 - !private ["Ps23CustomStringConvertible", "userInfo"]
 - !private ["Ps23CustomStringConvertible", "viewContext"]
 - ["Ps23CustomStringConvertible", "window"]
@@ -204,9 +252,12 @@ depends-member:
 - !private ["Vs10Dictionary", "Value"]
 - ["Vs10Dictionary", "deinit"]
 - !private ["Sd", "deinit"]
+- !private ["Ps9Equatable", "Auth"]
 - !private ["Ps9Equatable", "FBSDKApplicationDelegate"]
 - !private ["Ps9Equatable", "FirebaseApp"]
+- !private ["Ps9Equatable", "IQKeyboardManager"]
 - !private ["Ps9Equatable", "NSPersistentContainer"]
+- !private ["Ps9Equatable", "UIStoryboard"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - ["Ps9Equatable", "application"]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
@@ -220,16 +271,22 @@ depends-member:
 - ["Ps9Equatable", "applicationWillEnterForeground"]
 - ["Ps9Equatable", "applicationWillResignActive"]
 - ["Ps9Equatable", "applicationWillTerminate"]
+- !private ["Ps9Equatable", "auth"]
 - !private ["Ps9Equatable", "configure"]
+- !private ["Ps9Equatable", "currentUser"]
+- !private ["Ps9Equatable", "enable"]
 - !private ["Ps9Equatable", "fatalError"]
 - !private ["Ps9Equatable", "hasChanges"]
 - !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "instantiateViewController"]
 - !private ["Ps9Equatable", "loadPersistentStores"]
 - ["Ps9Equatable", "persistentContainer"]
 - ["Ps9Equatable", "persistentContainer.storage"]
+- !private ["Ps9Equatable", "rootViewController"]
 - !private ["Ps9Equatable", "save"]
 - ["Ps9Equatable", "saveContext"]
 - !private ["Ps9Equatable", "sharedInstance"]
+- !private ["Ps9Equatable", "sharedManager"]
 - !private ["Ps9Equatable", "userInfo"]
 - !private ["Ps9Equatable", "viewContext"]
 - ["Ps9Equatable", "window"]
@@ -247,9 +304,12 @@ depends-member:
 - !private ["CSo24FBSDKApplicationDelegate", "sharedInstance"]
 - !private ["CSo11FirebaseApp", "configure"]
 - !private ["Sf", "deinit"]
+- !private ["Ps8Hashable", "Auth"]
 - !private ["Ps8Hashable", "FBSDKApplicationDelegate"]
 - !private ["Ps8Hashable", "FirebaseApp"]
+- !private ["Ps8Hashable", "IQKeyboardManager"]
 - !private ["Ps8Hashable", "NSPersistentContainer"]
+- !private ["Ps8Hashable", "UIStoryboard"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - ["Ps8Hashable", "application"]
 - ["Ps8Hashable", "applicationDidBecomeActive"]
@@ -263,20 +323,29 @@ depends-member:
 - ["Ps8Hashable", "applicationWillEnterForeground"]
 - ["Ps8Hashable", "applicationWillResignActive"]
 - ["Ps8Hashable", "applicationWillTerminate"]
+- !private ["Ps8Hashable", "auth"]
 - !private ["Ps8Hashable", "configure"]
+- !private ["Ps8Hashable", "currentUser"]
+- !private ["Ps8Hashable", "enable"]
 - !private ["Ps8Hashable", "fatalError"]
 - !private ["Ps8Hashable", "hasChanges"]
 - !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "instantiateViewController"]
 - !private ["Ps8Hashable", "loadPersistentStores"]
 - ["Ps8Hashable", "persistentContainer"]
 - ["Ps8Hashable", "persistentContainer.storage"]
+- !private ["Ps8Hashable", "rootViewController"]
 - !private ["Ps8Hashable", "save"]
 - ["Ps8Hashable", "saveContext"]
 - !private ["Ps8Hashable", "sharedInstance"]
+- !private ["Ps8Hashable", "sharedManager"]
 - !private ["Ps8Hashable", "userInfo"]
 - !private ["Ps8Hashable", "viewContext"]
 - ["Ps8Hashable", "window"]
 - ["Ps8Hashable", ""]
+- ["C22IQKeyboardManagerSwift17IQKeyboardManager", "deinit"]
+- !private ["C22IQKeyboardManagerSwift17IQKeyboardManager", "enable"]
+- !private ["C22IQKeyboardManagerSwift17IQKeyboardManager", "sharedManager"]
 - ["SQ", "deinit"]
 - !private ["Ps9Indexable", "Key"]
 - !private ["Ps9Indexable", "Value"]
@@ -293,6 +362,7 @@ depends-member:
 - !private ["Ps10MirrorPath", "init"]
 - !private ["PSo8NSCoding", "hasChanges"]
 - !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "rootViewController"]
 - !private ["PSo8NSCoding", "save"]
 - !private ["PSo8NSCoding", "userInfo"]
 - !private ["PSo9NSCopying", "init"]
@@ -305,14 +375,17 @@ depends-member:
 - !private ["CSo22NSManagedObjectContext", "hasChanges"]
 - !private ["CSo22NSManagedObjectContext", "save"]
 - !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSObject", "Auth"]
 - ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "FBSDKApplicationDelegate"]
 - !private ["CSo8NSObject", "FirebaseApp"]
+- !private ["CSo8NSObject", "IQKeyboardManager"]
 - !private ["CSo8NSObject", "NSError"]
 - ["CSo8NSObject", "NSPersistentContainer"]
 - ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIApplicationLaunchOptionsKey"]
 - ["CSo8NSObject", "UIApplicationOpenURLOptionsKey"]
+- !private ["CSo8NSObject", "UIStoryboard"]
 - ["CSo8NSObject", "UIWindow"]
 - ["CSo8NSObject", "URL"]
 - ["CSo8NSObject", "application"]
@@ -327,22 +400,31 @@ depends-member:
 - ["CSo8NSObject", "applicationWillEnterForeground"]
 - ["CSo8NSObject", "applicationWillResignActive"]
 - ["CSo8NSObject", "applicationWillTerminate"]
+- !private ["CSo8NSObject", "auth"]
 - !private ["CSo8NSObject", "configure"]
+- !private ["CSo8NSObject", "currentUser"]
+- !private ["CSo8NSObject", "enable"]
 - !private ["CSo8NSObject", "fatalError"]
 - !private ["CSo8NSObject", "hasChanges"]
 - ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "instantiateViewController"]
 - !private ["CSo8NSObject", "loadPersistentStores"]
 - ["CSo8NSObject", "persistentContainer"]
 - ["CSo8NSObject", "persistentContainer.storage"]
+- !private ["CSo8NSObject", "rootViewController"]
 - !private ["CSo8NSObject", "save"]
 - ["CSo8NSObject", "saveContext"]
 - !private ["CSo8NSObject", "sharedInstance"]
+- !private ["CSo8NSObject", "sharedManager"]
 - !private ["CSo8NSObject", "userInfo"]
 - !private ["CSo8NSObject", "viewContext"]
 - ["CSo8NSObject", "window"]
+- !private ["PSo16NSObjectProtocol", "Auth"]
 - !private ["PSo16NSObjectProtocol", "FBSDKApplicationDelegate"]
 - !private ["PSo16NSObjectProtocol", "FirebaseApp"]
+- !private ["PSo16NSObjectProtocol", "IQKeyboardManager"]
 - !private ["PSo16NSObjectProtocol", "NSPersistentContainer"]
+- !private ["PSo16NSObjectProtocol", "UIStoryboard"]
 - ["PSo16NSObjectProtocol", "application"]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
 - ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
@@ -355,16 +437,22 @@ depends-member:
 - ["PSo16NSObjectProtocol", "applicationWillEnterForeground"]
 - ["PSo16NSObjectProtocol", "applicationWillResignActive"]
 - ["PSo16NSObjectProtocol", "applicationWillTerminate"]
+- !private ["PSo16NSObjectProtocol", "auth"]
 - !private ["PSo16NSObjectProtocol", "configure"]
+- !private ["PSo16NSObjectProtocol", "currentUser"]
+- !private ["PSo16NSObjectProtocol", "enable"]
 - !private ["PSo16NSObjectProtocol", "fatalError"]
 - !private ["PSo16NSObjectProtocol", "hasChanges"]
 - !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "instantiateViewController"]
 - !private ["PSo16NSObjectProtocol", "loadPersistentStores"]
 - ["PSo16NSObjectProtocol", "persistentContainer"]
 - ["PSo16NSObjectProtocol", "persistentContainer.storage"]
+- !private ["PSo16NSObjectProtocol", "rootViewController"]
 - !private ["PSo16NSObjectProtocol", "save"]
 - ["PSo16NSObjectProtocol", "saveContext"]
 - !private ["PSo16NSObjectProtocol", "sharedInstance"]
+- !private ["PSo16NSObjectProtocol", "sharedManager"]
 - !private ["PSo16NSObjectProtocol", "userInfo"]
 - !private ["PSo16NSObjectProtocol", "viewContext"]
 - ["PSo16NSObjectProtocol", "window"]
@@ -386,10 +474,16 @@ depends-member:
 - !private ["SS", "init"]
 - !private ["Ps16TextOutputStream", "init"]
 - !private ["Ps20TextOutputStreamable", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "rootViewController"]
+- !private ["PSo12UIAppearance", "rootViewController"]
+- !private ["PSo21UIAppearanceContainer", "rootViewController"]
 - ["CSo13UIApplication", "deinit"]
+- !private ["PSo21UIApplicationDelegate", "Auth"]
 - !private ["PSo21UIApplicationDelegate", "FBSDKApplicationDelegate"]
 - !private ["PSo21UIApplicationDelegate", "FirebaseApp"]
+- !private ["PSo21UIApplicationDelegate", "IQKeyboardManager"]
 - !private ["PSo21UIApplicationDelegate", "NSPersistentContainer"]
+- !private ["PSo21UIApplicationDelegate", "UIStoryboard"]
 - ["PSo21UIApplicationDelegate", "application"]
 - ["PSo21UIApplicationDelegate", "applicationDidBecomeActive"]
 - ["PSo21UIApplicationDelegate", "applicationDidEnterBackground"]
@@ -407,14 +501,23 @@ depends-member:
 - !private ["PSo21UIApplicationDelegate", "saveContext"]
 - ["PSo21UIApplicationDelegate", "window"]
 - ["PSo21UIApplicationDelegate", ""]
+- !private ["PSo17UICoordinateSpace", "rootViewController"]
+- !private ["PSo13UIDynamicItem", "rootViewController"]
+- !private ["PSo18UIFocusEnvironment", "rootViewController"]
+- !private ["PSo11UIFocusItem", "rootViewController"]
+- !private ["PSo27UIGestureRecognizerDelegate", "enable"]
+- !private ["PSo27UIGestureRecognizerDelegate", "sharedManager"]
+- !private ["CSo11UIResponder", "Auth"]
 - ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "FBSDKApplicationDelegate"]
 - !private ["CSo11UIResponder", "FirebaseApp"]
+- !private ["CSo11UIResponder", "IQKeyboardManager"]
 - !private ["CSo11UIResponder", "NSError"]
 - ["CSo11UIResponder", "NSPersistentContainer"]
 - ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIApplicationLaunchOptionsKey"]
 - ["CSo11UIResponder", "UIApplicationOpenURLOptionsKey"]
+- !private ["CSo11UIResponder", "UIStoryboard"]
 - ["CSo11UIResponder", "UIWindow"]
 - ["CSo11UIResponder", "URL"]
 - ["CSo11UIResponder", "application"]
@@ -434,12 +537,16 @@ depends-member:
 - ["CSo11UIResponder", "init"]
 - ["CSo11UIResponder", "persistentContainer"]
 - ["CSo11UIResponder", "persistentContainer.storage"]
+- !private ["CSo11UIResponder", "rootViewController"]
 - ["CSo11UIResponder", "saveContext"]
 - ["CSo11UIResponder", "window"]
 - ["CSo11UIResponder", ""]
+- !private ["PSo30UIResponderStandardEditActions", "Auth"]
 - !private ["PSo30UIResponderStandardEditActions", "FBSDKApplicationDelegate"]
 - !private ["PSo30UIResponderStandardEditActions", "FirebaseApp"]
+- !private ["PSo30UIResponderStandardEditActions", "IQKeyboardManager"]
 - !private ["PSo30UIResponderStandardEditActions", "NSPersistentContainer"]
+- !private ["PSo30UIResponderStandardEditActions", "UIStoryboard"]
 - ["PSo30UIResponderStandardEditActions", "application"]
 - ["PSo30UIResponderStandardEditActions", "applicationDidBecomeActive"]
 - ["PSo30UIResponderStandardEditActions", "applicationDidEnterBackground"]
@@ -456,9 +563,17 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "init"]
 - ["PSo30UIResponderStandardEditActions", "persistentContainer"]
 - ["PSo30UIResponderStandardEditActions", "persistentContainer.storage"]
+- !private ["PSo30UIResponderStandardEditActions", "rootViewController"]
 - ["PSo30UIResponderStandardEditActions", "saveContext"]
 - ["PSo30UIResponderStandardEditActions", "window"]
 - ["PSo30UIResponderStandardEditActions", ""]
+- ["CSo12UIStoryboard", "deinit"]
+- !private ["CSo12UIStoryboard", "init"]
+- !private ["CSo12UIStoryboard", "instantiateViewController"]
+- !private ["PSo18UITraitEnvironment", "rootViewController"]
+- !private ["CSo6UIView", "rootViewController"]
+- ["CSo16UIViewController", "deinit"]
+- !private ["CSo8UIWindow", "rootViewController"]
 - ["Su", "deinit"]
 - !private ["Vs6UInt16", "deinit"]
 - !private ["Vs6UInt32", "deinit"]
@@ -467,15 +582,19 @@ depends-member:
 - ["V10Foundation3URL", "deinit"]
 - !private ["P9Alamofire14URLConvertible", "init"]
 - !private ["Sc", "deinit"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "rootViewController"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "Auth"]
 - !private ["Ps9_Hashable", "FBSDKApplicationDelegate"]
 - !private ["Ps9_Hashable", "FirebaseApp"]
+- !private ["Ps9_Hashable", "IQKeyboardManager"]
 - !private ["Ps9_Hashable", "NSPersistentContainer"]
+- !private ["Ps9_Hashable", "UIStoryboard"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - ["Ps9_Hashable", "application"]
 - ["Ps9_Hashable", "applicationDidBecomeActive"]
@@ -489,16 +608,22 @@ depends-member:
 - ["Ps9_Hashable", "applicationWillEnterForeground"]
 - ["Ps9_Hashable", "applicationWillResignActive"]
 - ["Ps9_Hashable", "applicationWillTerminate"]
+- !private ["Ps9_Hashable", "auth"]
 - !private ["Ps9_Hashable", "configure"]
+- !private ["Ps9_Hashable", "currentUser"]
+- !private ["Ps9_Hashable", "enable"]
 - !private ["Ps9_Hashable", "fatalError"]
 - !private ["Ps9_Hashable", "hasChanges"]
 - !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "instantiateViewController"]
 - !private ["Ps9_Hashable", "loadPersistentStores"]
 - ["Ps9_Hashable", "persistentContainer"]
 - ["Ps9_Hashable", "persistentContainer.storage"]
+- !private ["Ps9_Hashable", "rootViewController"]
 - !private ["Ps9_Hashable", "save"]
 - ["Ps9_Hashable", "saveContext"]
 - !private ["Ps9_Hashable", "sharedInstance"]
+- !private ["Ps9_Hashable", "sharedManager"]
 - !private ["Ps9_Hashable", "userInfo"]
 - !private ["Ps9_Hashable", "viewContext"]
 - ["Ps9_Hashable", "window"]
@@ -507,10 +632,13 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 depends-nominal:
 - "Ps9AnyObject"
 - "C5Selly11AppDelegate"
+- "CSo4Auth"
 - "Sb"
+- !private "PSo15CALayerDelegate"
 - "Ps7CVarArg"
 - !private "Vs9Character"
 - !private "Ps10Collection"
@@ -533,6 +661,7 @@ depends-nominal:
 - !private "CSo11FirebaseApp"
 - !private "Sf"
 - "Ps8Hashable"
+- "C22IQKeyboardManagerSwift17IQKeyboardManager"
 - "SQ"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
@@ -562,10 +691,23 @@ depends-nominal:
 - "SS"
 - !private "Ps16TextOutputStream"
 - !private "Ps20TextOutputStreamable"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- !private "PSo21UIAppearanceContainer"
 - "CSo13UIApplication"
 - "PSo21UIApplicationDelegate"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- !private "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
+- !private "PSo27UIGestureRecognizerDelegate"
 - "CSo11UIResponder"
 - "PSo30UIResponderStandardEditActions"
+- "CSo12UIStoryboard"
+- !private "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "CSo8UIWindow"
 - "Su"
 - !private "Vs6UInt16"
 - !private "Vs6UInt32"
@@ -574,6 +716,7 @@ depends-nominal:
 - "V10Foundation3URL"
 - !private "P9Alamofire14URLConvertible"
 - !private "Sc"
+- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps34_ExpressibleByBuiltinStringLiteral"
@@ -582,6 +725,7 @@ depends-nominal:
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
@@ -711,6 +855,19 @@ depends-external:
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/IQKeyboardManagerSwift.swiftmodule/x86_64.swiftmodule"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-umbrella.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/module.modulemap"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework/Modules/AlamofireImage.swiftmodule/x86_64.swiftmodule"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework/Headers/AlamofireImage-Swift.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework/Headers/AlamofireImage-umbrella.h"
+- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework/Modules/module.modulemap"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AACarousel/AACarousel.framework/Modules/AACarousel.swiftmodule/x86_64.swiftmodule"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AACarousel/AACarousel.framework/Headers/AACarousel-Swift.h"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/AACarousel/AACarousel.framework/Headers/AACarousel-umbrella.h"
@@ -720,9 +877,4 @@ depends-external:
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Kingfisher/Kingfisher.framework/Headers/Kingfisher.h"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Kingfisher/Kingfisher.framework/Headers/Kingfisher-umbrella.h"
 - "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Kingfisher/Kingfisher.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
-- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
-- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
-- "/Users/SiD/Desktop/CS 490/Selly/build/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
-interface-hash: "dfe2fc260b3ce8b22375d4d9926c32e9"
+interface-hash: "0a4b580b3c559be7e06c844461339db3"

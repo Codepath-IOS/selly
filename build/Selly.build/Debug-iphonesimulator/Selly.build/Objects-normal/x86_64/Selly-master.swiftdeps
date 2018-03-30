@@ -1,14 +1,14 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
-options: "12af89fb2f3ca2dcb4e1f708168b0e21"
-build_time: [575697825, 993352000]
+options: "500d53ee9831d65e06b0cfa647ae140c"
+build_time: [575763601, 326124000]
 inputs:
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/LoginViewController.swift": [575605024, 0]
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/UploadViewController.swift": [575696493, 0]
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/SellyClient.swift": [575676905, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/UploadViewController.swift": [575758229, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/SellyClient.swift": [575758229, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewController.swift": [572572448, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/ChatViewController.swift": [575595107, 0]
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/AppDelegate.swift": [575510418, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/AppDelegate.swift": [575758229, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/Models/Item.swift": [575676746, 0]
   "/Users/SiD/Desktop/CS 490/Selly/Selly/Models/User.swift": [575605024, 0]
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/BrowseViewController.swift": [575697825, 0]
-  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/DetailViewController.swift": [575696058, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/BrowseViewController.swift": [575758229, 0]
+  "/Users/SiD/Desktop/CS 490/Selly/Selly/ViewControllers/DetailViewController.swift": [575763384, 0]
