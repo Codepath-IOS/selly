@@ -1,7 +1,7 @@
 //
 //  IQUIView+Hierarchy.swift
 // https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-16 Iftekhar Qurashi.
+// Copyright (c) 2013-15 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,37 @@
 // THE SOFTWARE.
 
 
+import Foundation
 import UIKit
+
+private var kIQIsAskingCanBecomeFirstResponder = "kIQIsAskingCanBecomeFirstResponder"
 
 /**
 UIView hierarchy category.
 */
 public extension UIView {
     
+    ///------------------------------
+    /// MARK: canBecomeFirstResponder
+    ///------------------------------
+    
+    /**
+    Returns YES if IQKeyboardManager asking for `canBecomeFirstResponder. Useful when doing custom work in `textFieldShouldBeginEditing:` delegate.
+    */
+    public var isAskingCanBecomeFirstResponder: Bool {
+        get {
+            
+            if let aValue = objc_getAssociatedObject(self, &kIQIsAskingCanBecomeFirstResponder) as? Bool {
+                return aValue
+            } else {
+                return false
+            }
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &kIQIsAskingCanBecomeFirstResponder, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
     ///----------------------
     /// MARK: viewControllers
     ///----------------------
@@ -41,7 +65,7 @@ public extension UIView {
         var nextResponder: UIResponder? = self
         
         repeat {
-            nextResponder = nextResponder?.next
+            nextResponder = nextResponder?.nextResponder()
             
             if let viewController = nextResponder as? UIViewController {
                 return viewController
@@ -74,7 +98,7 @@ public extension UIView {
             while matchController != nil && controllersHierarchy.contains(matchController as! UIViewController) == false {
                 
                 repeat {
-                    matchController = matchController?.next
+                    matchController = matchController?.nextResponder()
 
                 } while matchController != nil && matchController is UIViewController == false
             }
@@ -94,34 +118,28 @@ public extension UIView {
     /**
     Returns the superView of provided class type.
     */
-    public func superviewOfClassType(_ classType:UIView.Type)->UIView? {
+    public func superviewOfClassType(classType:AnyClass)->UIView? {
+
+        struct InternalClass {
+            
+            static var UITableViewCellScrollViewClass: AnyClass?   =   NSClassFromString("UITableViewCellScrollView") //UITableViewCell
+            static var UITableViewWrapperViewClass: AnyClass?      =   NSClassFromString("UITableViewWrapperView") //UITableViewCell
+            static var UIQueuingScrollViewClass: AnyClass?         =   NSClassFromString("_UIQueuingScrollView") //UIPageViewController
+        }
 
         var superView = superview
         
         while let unwrappedSuperView = superView {
             
-            if unwrappedSuperView.isKind(of: classType) {
-                
-                //If it's UIScrollView, then validating for special cases
-                if unwrappedSuperView.isKind(of: UIScrollView.self) {
-                    
-                    let classNameString = NSStringFromClass(type(of:unwrappedSuperView.self))
-
-                    //  If it's not UITableViewWrapperView class, this is internal class which is actually manage in UITableview. The speciality of this class is that it's superview is UITableView.
-                    //  If it's not UITableViewCellScrollView class, this is internal class which is actually manage in UITableviewCell. The speciality of this class is that it's superview is UITableViewCell.
-                    //If it's not _UIQueuingScrollView class, actually we validate for _ prefix which usually used by Apple internal classes
-                    if unwrappedSuperView.superview?.isKind(of: UITableView.self) == false &&
-                        unwrappedSuperView.superview?.isKind(of: UITableViewCell.self) == false &&
-                        classNameString.hasPrefix("_") == false {
+            if unwrappedSuperView.isKindOfClass(classType) &&
+                ((InternalClass.UITableViewCellScrollViewClass == nil || unwrappedSuperView.isKindOfClass(InternalClass.UITableViewCellScrollViewClass!) == false) &&
+                    (InternalClass.UITableViewWrapperViewClass == nil || unwrappedSuperView.isKindOfClass(InternalClass.UITableViewWrapperViewClass!) == false) &&
+                    (InternalClass.UIQueuingScrollViewClass == nil || unwrappedSuperView.isKindOfClass(InternalClass.UIQueuingScrollViewClass!) == false)) {
                         return superView
-                    }
-                }
-                else {
-                    return superView
-                }
+            } else {
+                
+                superView = unwrappedSuperView.superview
             }
-            
-            superView = unwrappedSuperView.superview
         }
         
         return nil
@@ -140,7 +158,7 @@ public extension UIView {
             
             for textField in siblings {
                 
-                if (textField == self || textField.ignoreSwitchingByNextPrevious == false) && textField._IQcanBecomeFirstResponder() == true {
+                if textField._IQcanBecomeFirstResponder() == true {
                     tempTextFields.append(textField)
                 }
             }
@@ -154,34 +172,17 @@ public extension UIView {
     */
     public func deepResponderViews()->[UIView] {
         
-        //Array of (UITextField/UITextView's).
-        var textfields = [UIView]()
+        //subviews are returning in opposite order. So I sorted it according the frames 'y'.
         
-        for textField in subviews {
+        let subViews = subviews.sort({ (obj1 : AnyObject, obj2 : AnyObject) -> Bool in
             
-            if (textField == self || textField.ignoreSwitchingByNextPrevious == false) && textField._IQcanBecomeFirstResponder() == true {
-                textfields.append(textField)
-            }
-
-            //Sometimes there are hidden or disabled views and textField inside them still recorded, so we added some more validations here (Bug ID: #458)
-            //Uncommented else (Bug ID: #625)
-            if textField.subviews.count != 0  && isUserInteractionEnabled == true && isHidden == false && alpha != 0.0 {
-                for deepView in textField.deepResponderViews() {
-                    textfields.append(deepView)
-                }
-            }
-        }
-        
-        //subviews are returning in opposite order. Sorting according the frames 'y'.
-        return textfields.sorted(by: { (view1 : UIView, view2 : UIView) -> Bool in
+            let view1 = obj1 as! UIView
+            let view2 = obj2 as! UIView
             
-            let frame1 = view1.convert(view1.bounds, to: self)
-            let frame2 = view2.convert(view2.bounds, to: self)
-
-            let x1 = frame1.minX
-            let y1 = frame1.minY
-            let x2 = frame2.minX
-            let y2 = frame2.minY
+            let x1 = CGRectGetMinX(view1.frame)
+            let y1 = CGRectGetMinY(view1.frame)
+            let x2 = CGRectGetMinX(view2.frame)
+            let y2 = CGRectGetMinY(view2.frame)
             
             if y1 != y2 {
                 return y1 < y2
@@ -189,22 +190,40 @@ public extension UIView {
                 return x1 < x2
             }
         })
+
+        //Array of (UITextField/UITextView's).
+        var textfields = [UIView]()
+        
+        for textField in subViews {
+            
+            if textField._IQcanBecomeFirstResponder() == true {
+                textfields.append(textField)
+            } else if textField.subviews.count != 0 {
+                for deepView in textField.deepResponderViews() {
+                    textfields.append(deepView)
+                }
+            }
+        }
+        
+        return textfields
     }
     
-    fileprivate func _IQcanBecomeFirstResponder() -> Bool {
+    private func _IQcanBecomeFirstResponder() -> Bool {
         
-        var _IQcanBecomeFirstResponder = false
+        isAskingCanBecomeFirstResponder = true
         
-        //  Setting toolbar to keyboard.
-        if let textField = self as? UITextField {
-            _IQcanBecomeFirstResponder = textField.isEnabled
-        } else if let textView = self as? UITextView {
-            _IQcanBecomeFirstResponder = textView.isEditable
-        }
-        
+        var _IQcanBecomeFirstResponder = (canBecomeFirstResponder() == true && userInteractionEnabled == true && hidden == false && alpha != 0.0 && isAlertViewTextField() == false && isSearchBarTextField() == false) as Bool
+
         if _IQcanBecomeFirstResponder == true {
-            _IQcanBecomeFirstResponder = isUserInteractionEnabled == true && isHidden == false && alpha != 0.0 && isAlertViewTextField() == false && isSearchBarTextField() == false
+            //  Setting toolbar to keyboard.
+            if let textField = self as? UITextField {
+                _IQcanBecomeFirstResponder = textField.enabled
+            } else if let textView = self as? UITextView {
+                _IQcanBecomeFirstResponder = textView.editable
+            }
         }
+
+        isAskingCanBecomeFirstResponder = false
 
         return _IQcanBecomeFirstResponder
     }
@@ -218,23 +237,12 @@ public extension UIView {
     */
     public func isSearchBarTextField()-> Bool {
         
-        var searchBar : UIResponder? = self.next
-        
-        var isSearchBarTextField = false
-        
-        while searchBar != nil && isSearchBarTextField == false {
+        struct InternalClass {
             
-            if searchBar!.isKind(of: UISearchBar.self) {
-                isSearchBarTextField = true
-                break
-            } else if searchBar is UIViewController {
-                break
-            }
-            
-            searchBar = searchBar?.next
+            static var UISearchBarTextFieldClass: AnyClass?        =   NSClassFromString("UISearchBarTextField") //UISearchBar
         }
-        
-        return isSearchBarTextField
+
+        return  (InternalClass.UISearchBarTextFieldClass != nil && isKindOfClass(InternalClass.UISearchBarTextFieldClass!)) || self is UISearchBar
     }
     
     /**
@@ -242,21 +250,14 @@ public extension UIView {
     */
     public func isAlertViewTextField()->Bool {
         
-        var alertViewController : UIResponder? = self.viewController()
-        
-        var isAlertViewTextField = false
-        
-        while alertViewController != nil && isAlertViewTextField == false {
+        struct InternalClass {
             
-            if alertViewController!.isKind(of: UIAlertController.self) {
-                isAlertViewTextField = true
-                break
-            }
-            
-            alertViewController = alertViewController?.next
+            static var UIAlertSheetTextFieldClass: AnyClass?       =   NSClassFromString("UIAlertSheetTextField") //UIAlertView
+            static var UIAlertSheetTextFieldClass_iOS8: AnyClass?  =   NSClassFromString("_UIAlertControllerTextField") //UIAlertView
         }
         
-        return isAlertViewTextField
+        return (InternalClass.UIAlertSheetTextFieldClass != nil && isKindOfClass(InternalClass.UIAlertSheetTextFieldClass!)) ||
+            (InternalClass.UIAlertSheetTextFieldClass_iOS8 != nil && isKindOfClass(InternalClass.UIAlertSheetTextFieldClass_iOS8!))
     }
     
 
@@ -267,30 +268,28 @@ public extension UIView {
     /**
     Returns current view transform with respect to the 'toView'.
     */
-    public func convertTransformToView(_ toView:UIView?)->CGAffineTransform {
+    public func convertTransformToView(var toView:UIView?)->CGAffineTransform {
         
-        var newView = toView
-        
-        if newView == nil {
-            newView = window
+        if toView == nil {
+            toView = window
         }
         
         //My Transform
-        var myTransform = CGAffineTransform.identity
+        var myTransform = CGAffineTransformIdentity
         
         if let superView = superview {
-            myTransform = transform.concatenating(superView.convertTransformToView(nil))
+            myTransform = CGAffineTransformConcat(transform, superView.convertTransformToView(nil))
         } else {
             myTransform = transform
         }
     
-        var viewTransform = CGAffineTransform.identity
+        var viewTransform = CGAffineTransformIdentity
         
         //view Transform
-        if let unwrappedToView = newView {
+        if let unwrappedToView = toView {
             
             if let unwrappedSuperView = unwrappedToView.superview {
-                viewTransform = unwrappedToView.transform.concatenating(unwrappedSuperView.convertTransformToView(nil))
+                viewTransform = CGAffineTransformConcat(unwrappedToView.transform, unwrappedSuperView.convertTransformToView(nil))
             }
             else {
                 viewTransform = unwrappedToView.transform
@@ -298,7 +297,7 @@ public extension UIView {
         }
         
         //Concating MyTransform and ViewTransform
-        return myTransform.concatenating(viewTransform.inverted())
+        return CGAffineTransformConcat(myTransform, CGAffineTransformInvert(viewTransform))
     }
     
     ///-----------------
@@ -326,7 +325,7 @@ public extension UIView {
 //        
 //    }
 
-    fileprivate func depth()->Int {
+    private func depth()->Int {
         var depth : Int = 0
         
         if let superView = superview {
@@ -342,7 +341,7 @@ public extension UIView {
 extension NSObject {
     
     public func _IQDescription() -> String {
-        return "<\(self) \(Unmanaged.passUnretained(self).toOpaque())>"
+        return "<\(self) \(unsafeAddressOf(self))>"
     }
 }
 
