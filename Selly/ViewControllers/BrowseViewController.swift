@@ -23,7 +23,7 @@ class BrowseViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIButton!
     
     @IBOutlet weak var sellerImage: UIImageView!
-    
+    var null: NSNull!
     @IBOutlet weak var sellerEmail: UILabel!
     @IBOutlet weak var sellerName: UILabel!
     @IBOutlet var gestureRecognizer: AnyObject!
@@ -41,6 +41,9 @@ class BrowseViewController: UIViewController {
     
     func getProduct() {
         databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+            if(snapshot.value as? NSDictionary == self.null) {
+                return
+            }
             for data in (snapshot.value as? NSDictionary)! {
                 if(self.itemID.contains(data.key as! String)) {
                     continue

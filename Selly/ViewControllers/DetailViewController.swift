@@ -135,6 +135,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        print(itemCategoryTextField.text ?? "")
     }
     
     func resizeImages(image: UIImageView) {
