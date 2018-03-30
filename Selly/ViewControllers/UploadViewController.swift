@@ -8,19 +8,24 @@
 
 import UIKit
 import AACarousel
+import Firebase
+import FirebaseDatabase
 import Kingfisher
 
 class UploadViewController: UIViewController, AACarouselDelegate{
 
-    
+    let databaseRef = Database.database().reference()
     
     @IBOutlet weak var corouselView: AACarousel!
-    
+ 
+    var itemID: [String] = [] // keeps keys of items
     var titleArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+//        getItemImages()
         
         let pathArray = ["https://firebasestorage.googleapis.com/v0/b/selly-7d9c2.appspot.com/o/itemPhotos%2F6E73A2A0-8FD3-4FCA-85E2-D7E65AEA0CA7?alt=media&token=63df7934-4968-4907-9ae6-3ddea1ad8cfa",
                          "https://firebasestorage.googleapis.com/v0/b/selly-7d9c2.appspot.com/o/itemPhotos%2FBFF225AB-5A3C-47E3-86D1-2732A9B20BE9?alt=media&token=ea56710f-61ea-4d34-bd3f-66fd8c0e7600", "https://firebasestorage.googleapis.com/v0/b/selly-7d9c2.appspot.com/o/itemPhotos%2FEF0908F5-C411-4A29-9AD9-8C0310590035?alt=media&token=e5536263-275b-4c56-aff8-f1da726988ec"]
@@ -32,7 +37,33 @@ class UploadViewController: UIViewController, AACarouselDelegate{
         corouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
     }
     
-    
+//    func getItemImages() {
+//        databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+//            for data in (snapshot.value as? NSDictionary)! {
+//                if(self.itemID.contains(data.key as! String)) {
+//                    continue
+//                } else {
+//                    let cc = data.value as! NSDictionary
+//                    let name = cc["itemName"] as? String ?? ""
+//                    let imageUrls = cc["itemPhotos"] as? [String]
+//                    let itemPirce = cc["itemPrice"] as? String!
+//                    let itemCategory = cc["itemCategory"] as? String!
+//
+//                    // storing itemID as key
+//                    self.itemID.append((cc["itemId"] as? String!)!)
+//                    let url = URL(string: (imageUrls?[0])!)
+//                    print(url)
+//
+//                    // set image, name, price, category
+//
+//                    self.titleLabel.text = name
+//                    self.priceLabel.text = itemPirce
+//                    self.categoryLabel.text = itemCategory
+//                    break
+//                }
+//            }
+//        })
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
