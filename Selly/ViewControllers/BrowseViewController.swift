@@ -107,27 +107,33 @@ class BrowseViewController: UIViewController {
             itemImageView.center.x = cardInitialCenter.x + translation.x
             itemImageView.center.y = cardInitialCenter.y + translation.y
             //print("Gesture changing")
+            
         } else if sender.state == .ended {
             if translation.x > 100{
                 print("swiped right")
-                 getProduct()
+                getProduct()
                 UIView.animate(withDuration:1, animations: {
-                    // This causes first view to fade in and second view to fade out
-                    //self.itemImageView.center.x = 1000
-                    self.itemImageView.imageView?.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)
-                    
+//                    self.itemImageView.imageView?.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)
+                    self.itemImageView.center.x = 1000
                     self.getProduct()
                 })
+                self.itemImageView.transform = CGAffineTransform.identity
+                self.itemImageView.center.x = self.holdDefaultPosition.x
+                self.itemImageView.center.y = self.holdDefaultPosition.y
             }
             else if translation.x < -100{
                 print("swiped left")
+                getProduct()
                 UIView.animate(withDuration:1, animations: {
                     self.itemImageView.center.x = -1000
                     self.getProduct()
                 })
-                
+                self.itemImageView.transform = CGAffineTransform.identity
+                self.itemImageView.center.x = self.holdDefaultPosition.x
+                self.itemImageView.center.y = self.holdDefaultPosition.y
             }
             else{
+                // swipe staying in middle
                 UIView.animate(withDuration:1, animations: {
                     self.itemImageView.transform = CGAffineTransform.identity
                     self.itemImageView.center.x = self.holdDefaultPosition.x

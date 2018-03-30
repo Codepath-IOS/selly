@@ -306,7 +306,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         
         SellyClient.sharedInstance.uploadPhoto(itemPhotos: photos, success: { (photoURLs) in
-            SellyClient.sharedInstance.createItem(itemName: self.itemNameTextField.text!, itemPrice: self.itemPriceTextField.text!, itemCategory: "candy", itemDescription: self.itemDescriptionTextField.text!, uidSeller: Auth.auth().currentUser!.uid , itemPhotos: photoURLs, success: { (newItem) in
+            SellyClient.sharedInstance.createItem(itemName: self.itemNameTextField.text!, itemPrice: self.itemPriceTextField.text!, itemCategory: self.itemCategoryTextField.text!, itemDescription: self.itemDescriptionTextField.text!, uidSeller: Auth.auth().currentUser!.uid , itemPhotos: photoURLs, success: { (newItem) in
                 print(newItem.itemName)
             }, failure: { (error) in
                 print(error.localizedDescription)
