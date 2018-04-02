@@ -1,5 +1,5 @@
 //
-//  IQUIScrollView+Additions.swift
+// IQPreviousNextView.swift
 // https://github.com/hackiftekhar/IQKeyboardManager
 // Copyright (c) 2013-16 Iftekhar Qurashi.
 //
@@ -21,27 +21,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Foundation
 import UIKit
 
-private var kIQShouldRestoreScrollViewContentOffset = "kIQShouldRestoreScrollViewContentOffset"
+open class IQPreviousNextView: UIView {
 
-public extension UIScrollView {
-    
-    /**
-     To set customized distance from keyboard for textField/textView. Can't be less than zero
-     */
-    public var shouldRestoreScrollViewContentOffset: Bool {
-        get {
-            
-            if let aValue = objc_getAssociatedObject(self, &kIQShouldRestoreScrollViewContentOffset) as? Bool {
-                return aValue
-            } else {
-                return false
-            }
-        }
-        set(newValue) {
-            objc_setAssociatedObject(self, &kIQShouldRestoreScrollViewContentOffset, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
 }
