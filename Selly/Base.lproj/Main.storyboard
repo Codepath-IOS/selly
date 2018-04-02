@@ -375,6 +375,59 @@
             </objects>
             <point key="canvasLocation" x="-42.399999999999999" y="1067.3163418290856"/>
         </scene>
+        <!--Chat Table View Controller-->
+        <scene sceneID="dhx-nT-gSK">
+            <objects>
+                <tableViewController id="4GC-X6-efr" customClass="ChatTableViewController" customModule="Selly" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="eix-sq-SBk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="likedCell" rowHeight="68" id="zkr-to-z9V" customClass="ChatTableViewCell" customModule="Selly" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zkr-to-z9V" id="6ew-Ue-tNh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-Xm-x4V">
+                                            <rect key="frame" x="8" y="0.0" width="71" height="64"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Siddhant Patel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-ac-2wZ">
+                                            <rect key="frame" x="87" y="8" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Si22hant@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAn-EX-4P2">
+                                            <rect key="frame" x="87" y="37" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sellerEmailLabel" destination="IAn-EX-4P2" id="i60-o9-Cu8"/>
+                                    <outlet property="sellerImage" destination="9o1-Xm-x4V" id="ktB-fp-0o8"/>
+                                    <outlet property="sellerNameLabel" destination="h1X-ac-2wZ" id="KrQ-VN-2ye"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4GC-X6-efr" id="uPm-fU-U3g"/>
+                            <outlet property="delegate" destination="4GC-X6-efr" id="7N2-Io-vDK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7Q-Qa-mTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="1132.9835082458771"/>
+        </scene>
         <!--Selly-->
         <scene sceneID="V7W-wI-2g3">
             <objects>
@@ -483,6 +536,9 @@
                                     <rect key="frame" x="335" y="10" width="24" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="ic_chat"/>
+                                    <connections>
+                                        <segue destination="4GC-X6-efr" kind="show" identifier="chat" id="2AD-Vr-InV"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem tag="1" image="ic_exit_to_app" style="plain" id="6F8-Hf-io5">
@@ -520,7 +576,7 @@
                 <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="ylG-3d-Eeq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="ar7-Fx-7AN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aU5-lZ-2QZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aU5-lZ-2QZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

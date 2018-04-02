@@ -12,6 +12,8 @@ import Firebase
 import AlamofireImage
 
 class BrowseViewController: UIViewController {
+    
+    let likedItemRef = Database.database().reference().child("chat")
     var databaseRef = Database.database().reference()
     var cardInitialCenter: CGPoint!
     var holdDefaultPosition: CGPoint!
@@ -35,7 +37,10 @@ class BrowseViewController: UIViewController {
     var itemDescription: String = ""
     var itemPrice: String = ""
     var itemURLS: [String] = []
+    var productID : String! //For NSUserDefaults
     var counter: Int!
+    var likesProductsID : [String]!
+    let defaults = UserDefaults.standard //storing liked products
     
     
     @IBAction func rightButton(_ sender: Any) {
@@ -63,6 +68,7 @@ class BrowseViewController: UIViewController {
                     
                     self.itemDescription = (cc["itemDescription"] as? String!)!
                     // storing itemID as key
+                    self.productID = cc["itemId"] as? String!
                     self.itemID.append((cc["itemId"] as? String!)!)
                     self.itemURLS = imageUrls!
                     let url = URL(string: (imageUrls?[0])!)
@@ -86,6 +92,8 @@ class BrowseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getProduct()
+        likesProductsID = defaults.stringArray(forKey: "likedProducts") ?? [String]()
+        
         // Attach panGestureREcognizer to a view
         
         itemImageView.imageView?.layer.cornerRadius = 7
@@ -120,7 +128,12 @@ class BrowseViewController: UIViewController {
         else if sender.state == .ended {
             if translation.x > 100{
                 print("swiped right")
-//                getProduct()
+
+                likesProductsID.append(productID)
+                defaults.set(likesProductsID, forKey: "likedProducts")
+                print(likesProductsID)
+                //getProduct()
+
                 UIView.animate(withDuration:1, animations: {
 //                    self.itemImageView.imageView?.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)
                     self.itemImageView.center.x = 1000
@@ -198,6 +211,9 @@ class BrowseViewController: UIViewController {
             VC?.itemDesc = itemDescription
             VC?.category = categoryLabel.text
             
+        }else if(segue.identifier == "chat") {
+            let VC = segue.destination as? ChatTableViewController
+            VC?.likesProductsID = likesProductsID
         }
         
      }
