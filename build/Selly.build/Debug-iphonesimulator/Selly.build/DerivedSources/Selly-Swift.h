@@ -117,8 +117,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
 @import Foundation;
-@import ObjectiveC;
+@import JSQMessagesViewController;
 @import CoreGraphics;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -144,6 +145,7 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 @class FIRDatabaseReference;
 @class NSNull;
+@class NSUserDefaults;
 @class UIPanGestureRecognizer;
 @class UIStoryboardSegue;
 @class UILabel;
@@ -171,6 +173,9 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @property (nonatomic, copy) NSString * _Nonnull itemDescription;
 @property (nonatomic, copy) NSString * _Nonnull itemPrice;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
+@property (nonatomic, copy) NSString * _Null_unspecified productID;
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
+@property (nonatomic, readonly, strong) NSUserDefaults * _Nonnull defaults;
 - (IBAction)rightButton:(id _Nonnull)sender;
 - (void)getProduct;
 - (void)viewDidLoad;
@@ -185,10 +190,56 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @end
 
 
-SWIFT_CLASS("_TtC5Selly18ChatViewController")
-@interface ChatViewController : UIViewController
+SWIFT_CLASS("_TtC5Selly17ChatTableViewCell")
+@interface ChatTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified sellerImage;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerEmailLabel;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+
+SWIFT_CLASS("_TtC5Selly23ChatTableViewController")
+@interface ChatTableViewController : UITableViewController
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class JSQMessage;
+@class JSQMessagesBubbleImage;
+@class JSQMessagesCollectionView;
+@protocol JSQMessageData;
+@class UICollectionView;
+@protocol JSQMessageBubbleImageDataSource;
+@protocol JSQMessageAvatarImageDataSource;
+@class NSAttributedString;
+@class JSQMessagesCollectionViewFlowLayout;
+
+SWIFT_CLASS("_TtC5Selly18ChatViewController")
+@interface ChatViewController : JSQMessagesViewController
+@property (nonatomic, copy) NSArray<JSQMessage *> * _Nonnull messages;
+@property (nonatomic, strong) JSQMessagesBubbleImage * _Nonnull outgoingBubble;
+@property (nonatomic, strong) JSQMessagesBubbleImage * _Nonnull incomingBubble;
+- (void)viewDidLoad;
+- (void)showDisplayNameDialog;
+- (id <JSQMessageData> _Null_unspecified)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView messageDataForItemAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (id <JSQMessageBubbleImageDataSource> _Null_unspecified)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath;
+- (id <JSQMessageAvatarImageDataSource> _Null_unspecified)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath;
+- (NSAttributedString * _Null_unspecified)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath;
+- (CGFloat)collectionView:(JSQMessagesCollectionView * _Null_unspecified)collectionView layout:(JSQMessagesCollectionViewFlowLayout * _Null_unspecified)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * _Null_unspecified)indexPath;
+- (void)didPressSendButton:(UIButton * _Null_unspecified)button withMessageText:(NSString * _Null_unspecified)text senderId:(NSString * _Null_unspecified)senderId senderDisplayName:(NSString * _Null_unspecified)senderDisplayName date:(NSDate * _Null_unspecified)date;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

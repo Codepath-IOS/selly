@@ -13,6 +13,8 @@
 		01CC4FFF204E0BEC00D2EA41 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CC4FFE204E0BEC00D2EA41 /* ChatViewController.swift */; };
 		01CC5001204E0BFF00D2EA41 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CC5000204E0BFF00D2EA41 /* DetailViewController.swift */; };
 		01CC5003204E0E0E00D2EA41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01CC5002204E0E0E00D2EA41 /* GoogleService-Info.plist */; };
+		1F64BF47206F37380023CE6A /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64BF46206F37380023CE6A /* ChatTableViewController.swift */; };
+		1F64BF49207007590023CE6A /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64BF48207007590023CE6A /* ChatTableViewCell.swift */; };
 		1FCC03A7203E3E2000B2EA26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC03A6203E3E2000B2EA26 /* AppDelegate.swift */; };
 		1FCC03A9203E3E2000B2EA26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC03A8203E3E2000B2EA26 /* ViewController.swift */; };
 		1FCC03AC203E3E2100B2EA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCC03AA203E3E2100B2EA26 /* Main.storyboard */; };
@@ -21,6 +23,7 @@
 		1FCC03B4203E3E2100B2EA26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCC03B2203E3E2100B2EA26 /* LaunchScreen.storyboard */; };
 		1FCC03BF203E3E2100B2EA26 /* SellyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC03BE203E3E2100B2EA26 /* SellyTests.swift */; };
 		1FCC03CA203E3E2100B2EA26 /* SellyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC03C9203E3E2100B2EA26 /* SellyUITests.swift */; };
+		1FF26F3A206F038700F49E01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF26F39206F038700F49E01 /* Constants.swift */; };
 		328114B7894641DE438228E3 /* Pods_SellyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08917388D0C0428BD54BA38A /* Pods_SellyUITests.framework */; };
 		48133DC91F514A8EE61B3CC6 /* Pods_SellyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1068AAB20D0C7B867CB8234D /* Pods_SellyTests.framework */; };
 		92B2BC8145D90D9C6CA115DA /* Pods_Selly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C6A8513C5C15F87D013BF7 /* Pods_Selly.framework */; };
@@ -57,6 +60,8 @@
 		0DD615F8AC264DEA6F8B1845 /* Pods-Selly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selly/Pods-Selly.debug.xcconfig"; sourceTree = "<group>"; };
 		1068AAB20D0C7B867CB8234D /* Pods_SellyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17036D7419DBB015FB875F09 /* Pods-SellyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellyTests/Pods-SellyTests.release.xcconfig"; sourceTree = "<group>"; };
+		1F64BF46206F37380023CE6A /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		1F64BF48207007590023CE6A /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		1FCC03A3203E3E2000B2EA26 /* Selly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCC03A6203E3E2000B2EA26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FCC03A8203E3E2000B2EA26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +76,8 @@
 		1FCC03C5203E3E2100B2EA26 /* SellyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SellyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCC03C9203E3E2100B2EA26 /* SellyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellyUITests.swift; sourceTree = "<group>"; };
 		1FCC03CB203E3E2100B2EA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FF26F38206F021000F49E01 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		1FF26F39206F038700F49E01 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		34C6A8513C5C15F87D013BF7 /* Pods_Selly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		693B86950F0C16956BCDF3D0 /* Pods-SellyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellyUITests/Pods-SellyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B87492FE206C730D000FB4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 				01CC4FFC204E0BC200D2EA41 /* UploadViewController.swift */,
 				01CC4FFE204E0BEC00D2EA41 /* ChatViewController.swift */,
 				01CC5000204E0BFF00D2EA41 /* DetailViewController.swift */,
+				1F64BF46206F37380023CE6A /* ChatTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				01CC5002204E0E0E00D2EA41 /* GoogleService-Info.plist */,
 				1FCC03AD203E3E2100B2EA26 /* Selly.xcdatamodeld */,
 				B8749300206C7520000FB4BB /* SellyClient.swift */,
+				1FF26F38206F021000F49E01 /* Bridging-Header.h */,
 			);
 			path = Selly;
 			sourceTree = "<group>";
@@ -194,6 +203,8 @@
 			children = (
 				B87492FE206C730D000FB4BB /* User.swift */,
 				B8749302206C7EC1000FB4BB /* Item.swift */,
+				1FF26F39206F038700F49E01 /* Constants.swift */,
+				1F64BF48207007590023CE6A /* ChatTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -497,6 +508,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -512,6 +525,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -539,6 +554,9 @@
 				1FCC03AF203E3E2100B2EA26 /* Selly.xcdatamodeld in Sources */,
 				01CC4FFB204E0B7600D2EA41 /* BrowseViewController.swift in Sources */,
 				01CC5001204E0BFF00D2EA41 /* DetailViewController.swift in Sources */,
+				1F64BF49207007590023CE6A /* ChatTableViewCell.swift in Sources */,
+				1F64BF47206F37380023CE6A /* ChatTableViewController.swift in Sources */,
+				1FF26F3A206F038700F49E01 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +712,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jy.selly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Selly/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -708,6 +727,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jy.selly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Selly/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
