@@ -132,10 +132,12 @@ class BrowseViewController: UIViewController {
         else if sender.state == .ended {
             if translation.x > 100{
                 print("swiped right")
+
                 likesProductsID.append(productID)
                 defaults.set(likesProductsID, forKey: "likedProducts")
                 //print(likesProductsID)
                 //getProduct()
+
                 UIView.animate(withDuration:1, animations: {
 //                    self.itemImageView.imageView?.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)
                     self.itemImageView.center.x = 1000
