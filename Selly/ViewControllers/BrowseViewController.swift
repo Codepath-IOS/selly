@@ -13,7 +13,7 @@ import AlamofireImage
 
 class BrowseViewController: UIViewController {
     
-    let likedItemRef = Database.database().reference().child("chat")
+    //let likedItemRef = Database.database().reference().child("chat")
     var databaseRef = Database.database().reference()
     var cardInitialCenter: CGPoint!
     var holdDefaultPosition: CGPoint!
@@ -56,8 +56,12 @@ class BrowseViewController: UIViewController {
                 if(self.itemID.contains(data.key as! String)) {
                     
                     continue
-                } else {
+                }else {
                     let cc = data.value as! NSDictionary
+                    let uid = cc["uidSeller"] as? String ?? ""
+                    if(uid == Auth.auth().currentUser?.uid) {
+                        continue
+                    }
                     let name = cc["itemName"] as? String ?? ""
                     let imageUrls = cc["itemPhotos"] as? [String]
                     let itemPirce = cc["itemPrice"] as? String!
@@ -130,7 +134,7 @@ class BrowseViewController: UIViewController {
                 print("swiped right")
                 likesProductsID.append(productID)
                 defaults.set(likesProductsID, forKey: "likedProducts")
-                print(likesProductsID)
+                //print(likesProductsID)
                 //getProduct()
                 UIView.animate(withDuration:1, animations: {
 //                    self.itemImageView.imageView?.center = CGPoint(x: self.cardInitialCenter.x + translation.x, y: self.cardInitialCenter.y)

@@ -206,8 +206,9 @@ SWIFT_CLASS("_TtC5Selly17ChatTableViewCell")
 SWIFT_CLASS("_TtC5Selly23ChatTableViewController")
 @interface ChatTableViewController : UITableViewController
 @property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
+@property (nonatomic, strong) FIRDatabaseReference * _Nonnull databaseRef;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
+- (void)getLikedProducts;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;

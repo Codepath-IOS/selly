@@ -426,7 +426,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7Q-Qa-mTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="1132.9835082458771"/>
+            <point key="canvasLocation" x="1188" y="1119"/>
         </scene>
         <!--Selly-->
         <scene sceneID="V7W-wI-2g3">
@@ -537,7 +537,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="ic_chat"/>
                                     <connections>
-                                        <segue destination="4GC-X6-efr" kind="show" identifier="chat" id="2AD-Vr-InV"/>
+                                        <segue destination="4GC-X6-efr" kind="show" identifier="chat" id="cdx-zu-UbB"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
