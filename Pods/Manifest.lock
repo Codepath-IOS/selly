@@ -61,6 +61,7 @@ PODS:
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+
   - Kingfisher (4.6.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -105,6 +106,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 0bd1e368ef2f92cfa8e4c8ab617962dae5a92254
+PODFILE CHECKSUM: 3587b04afb655224612eaf0e9781772d3f6c8373
 
 COCOAPODS: 1.4.0
