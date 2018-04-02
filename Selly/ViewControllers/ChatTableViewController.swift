@@ -8,21 +8,28 @@
 
 import UIKit
 import Firebase
+import AlamofireImage
 
 class ChatTableViewController: UITableViewController {
-    var likesProductsID : [String]!
-    var databaseRef = Database.database().reference()
-    
+    var likedProductName : [String]!
+    var likedProductSellerName : [String]!
+    var productURL: [String]!
+    //var databaseRef = Database.database().reference()
+    var userRef = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!)
     override func viewDidLoad() {
         super.viewDidLoad()
+        getLikedProducts()
 
         
     }
 
     func getLikedProducts() {
-        databaseRef.child("items").queryOrderedByKey().observe(.value, with: { (snapshot) in
+        userRef.child("likedProducts").queryOrderedByKey().observe(.value, with: { (snapshot) in
             for data in (snapshot.value as? NSDictionary)! {
-                
+                for data in (snapshot.value as? NSDictionary)! {
+                    let cc = data.value as! NSDictionary
+                    self.likedProductName.append((cc["productName"] as? String!)!)
+                }
             }
         })
     }
@@ -35,13 +42,13 @@ class ChatTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return likesProductsID.count
+        return 5
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "likedCell", for: indexPath) as! ChatTableViewCell
-        cell.sellerNameLabel.text = likesProductsID[indexPath.row]
+        cell.sellerNameLabel.text = likedProductName[indexPath.row]
         
         // Configure the cell...
 

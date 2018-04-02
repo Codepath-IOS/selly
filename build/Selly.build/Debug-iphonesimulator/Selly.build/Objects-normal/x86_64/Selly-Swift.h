@@ -145,7 +145,6 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 @class FIRDatabaseReference;
 @class NSNull;
-@class NSUserDefaults;
 @class UIPanGestureRecognizer;
 @class UIStoryboardSegue;
 @class UILabel;
@@ -156,6 +155,8 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @interface BrowseViewController : UIViewController
+@property (nonatomic, readonly, copy) NSString * _Nullable currentUser;
+@property (nonatomic, strong) FIRDatabaseReference * _Nonnull userRef;
 @property (nonatomic, strong) FIRDatabaseReference * _Nonnull databaseRef;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified priceLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
@@ -173,9 +174,8 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @property (nonatomic, copy) NSString * _Nonnull itemDescription;
 @property (nonatomic, copy) NSString * _Nonnull itemPrice;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
-@property (nonatomic, copy) NSString * _Null_unspecified productID;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerImageURL;
 @property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
-@property (nonatomic, readonly, strong) NSUserDefaults * _Nonnull defaults;
 - (IBAction)rightButton:(id _Nonnull)sender;
 - (void)getProduct;
 - (void)viewDidLoad;
@@ -205,8 +205,10 @@ SWIFT_CLASS("_TtC5Selly17ChatTableViewCell")
 
 SWIFT_CLASS("_TtC5Selly23ChatTableViewController")
 @interface ChatTableViewController : UITableViewController
-@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
-@property (nonatomic, strong) FIRDatabaseReference * _Nonnull databaseRef;
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likedProductName;
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likedProductSellerName;
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified productURL;
+@property (nonatomic, strong) FIRDatabaseReference * _Nonnull userRef;
 - (void)viewDidLoad;
 - (void)getLikedProducts;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;

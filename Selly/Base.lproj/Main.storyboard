@@ -536,9 +536,6 @@
                                     <rect key="frame" x="335" y="10" width="24" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="ic_chat"/>
-                                    <connections>
-                                        <segue destination="4GC-X6-efr" kind="show" identifier="chat" id="cdx-zu-UbB"/>
-                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem tag="1" image="ic_exit_to_app" style="plain" id="6F8-Hf-io5">

@@ -14,6 +14,10 @@ import AlamofireImage
 class BrowseViewController: UIViewController {
     
     //let likedItemRef = Database.database().reference().child("chat")
+    let currentUser = Auth.auth().currentUser?.uid
+    var userRef = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("likedProducts")
+    //let locationRef =
+    
     var databaseRef = Database.database().reference()
     var cardInitialCenter: CGPoint!
     var holdDefaultPosition: CGPoint!
@@ -37,10 +41,11 @@ class BrowseViewController: UIViewController {
     var itemDescription: String = ""
     var itemPrice: String = ""
     var itemURLS: [String] = []
-    var productID : String! //For NSUserDefaults
+    var sellerImageURL : String!
+    //var productID : String! //For NSUserDefaults
     var counter: Int!
     var likesProductsID : [String]!
-    let defaults = UserDefaults.standard //storing liked products
+    //let defaults = UserDefaults.standard //storing liked products
     
     
     @IBAction func rightButton(_ sender: Any) {
@@ -63,16 +68,17 @@ class BrowseViewController: UIViewController {
                         continue
                     }
                     let name = cc["itemName"] as? String ?? ""
+                    self.itemName = name
                     let imageUrls = cc["itemPhotos"] as? [String]
                     let itemPirce = cc["itemPrice"] as? String!
                     let itemCategory = cc["itemCategory"] as? String!
                     let sellerName = cc["sellerName"] as? String!
                     let sellerEmail = cc["sellerEmail"] as? String!
                     let sellerImageURL = cc["sellerImageURL"] as? String!
-                    
+                    self.sellerImageURL = sellerImageURL
                     self.itemDescription = (cc["itemDescription"] as? String!)!
                     // storing itemID as key
-                    self.productID = cc["itemId"] as? String!
+                    //self.productID = cc["itemId"] as? String!
                     self.itemID.append((cc["itemId"] as? String!)!)
                     self.itemURLS = imageUrls!
                     let url = URL(string: (imageUrls?[0])!)
@@ -87,6 +93,8 @@ class BrowseViewController: UIViewController {
                     self.sellerName.text = sellerName
                     self.sellerImage.af_setImage(withURL: sellerUrl!)
                     self.counter = 1;
+                    //let newUserRef = self.userRef.child((self.currentUser?.uid)!).child("likedProducts")
+                    
                     break
                 }
             }
@@ -96,7 +104,8 @@ class BrowseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getProduct()
-        likesProductsID = defaults.stringArray(forKey: "likedProducts") ?? [String]()
+        
+        //likesProductsID = defaults.stringArray(forKey: "likedProducts") ?? [String]()
         
         // Attach panGestureREcognizer to a view
         
@@ -132,9 +141,10 @@ class BrowseViewController: UIViewController {
         else if sender.state == .ended {
             if translation.x > 100{
                 print("swiped right")
-
-                likesProductsID.append(productID)
-                defaults.set(likesProductsID, forKey: "likedProducts")
+                let userInfo = ["productName": itemName, "sellerName": sellerName.text, "photoURL": itemURLS[0], "sellerImageURL": sellerImageURL]
+                self.userRef.childByAutoId().setValue(userInfo)
+                //likesProductsID.append(productID)
+                //defaults.set(likesProductsID, forKey: "likedProducts")
                 //print(likesProductsID)
                 //getProduct()
 
@@ -217,7 +227,7 @@ class BrowseViewController: UIViewController {
             
         }else if(segue.identifier == "chat") {
             let VC = segue.destination as? ChatTableViewController
-            VC?.likesProductsID = likesProductsID
+            //VC?.likesProductsID = likesProductsID
         }
         
      }
