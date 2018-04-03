@@ -54,7 +54,6 @@ class BrowseViewController: UIViewController {
             }
             for data in (snapshot.value as? NSDictionary)! {
                 if(self.itemID.contains(data.key as! String)) {
-                    
                     continue
                 } else {
                     let cc = data.value as! NSDictionary
@@ -142,6 +141,9 @@ class BrowseViewController: UIViewController {
                 self.itemImageView.transform = CGAffineTransform.identity
                 self.itemImageView.center.x = self.holdDefaultPosition.x
                 self.itemImageView.center.y = self.holdDefaultPosition.y
+                
+                // creating a chat room
+                
             }
             else if translation.x < -100{
                 print("swiped left")

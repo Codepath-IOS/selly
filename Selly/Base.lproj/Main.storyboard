@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELK-R3-MXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3278" y="-208"/>
+            <point key="canvasLocation" x="3616.8000000000002" y="-208.24587706146929"/>
         </scene>
         <!--Upload-->
         <scene sceneID="0G7-zc-yGS">
@@ -346,7 +346,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3278" y="685"/>
+            <point key="canvasLocation" x="3616.8000000000002" y="684.10794602698661"/>
         </scene>
         <!--Messages-->
         <scene sceneID="KXu-8g-EE5">
@@ -373,9 +373,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFB-Tw-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42.399999999999999" y="1067.3163418290856"/>
+            <point key="canvasLocation" x="-42" y="1987"/>
         </scene>
-        <!--Chat Table View Controller-->
+        <!--Item-->
         <scene sceneID="dhx-nT-gSK">
             <objects>
                 <tableViewController id="4GC-X6-efr" customClass="ChatTableViewController" customModule="Selly" customModuleProvider="target" sceneMemberID="viewController">
@@ -423,10 +423,11 @@
                             <outlet property="delegate" destination="4GC-X6-efr" id="7N2-Io-vDK"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="IcD-ca-ddM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7Q-Qa-mTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="1132.9835082458771"/>
+            <point key="canvasLocation" x="-660" y="1192"/>
         </scene>
         <!--Selly-->
         <scene sceneID="V7W-wI-2g3">
@@ -537,7 +538,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="ic_chat"/>
                                     <connections>
-                                        <segue destination="4GC-X6-efr" kind="show" identifier="chat" id="2AD-Vr-InV"/>
+                                        <segue destination="MTQ-0s-dSU" kind="show" id="fNU-cx-Ryf"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -568,31 +569,12 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="AGL-RP-cPe"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="G6Q-q3-8Z6"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="200.14992503748127"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="ZNJ-37-qMZ">
-            <objects>
-                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="ylG-3d-Eeq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="ar7-Fx-7AN"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aU5-lZ-2QZ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QG0-dO-frz" kind="relationship" relationship="rootViewController" id="ETV-nD-vsA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DRo-cf-Cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1188" y="-582.45877061469275"/>
+            <point key="canvasLocation" x="1903" y="-250"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xhX-3e-8c5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MIm-58-Bj6" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="MIm-58-Bj6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="kmi-LD-0h1">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -600,13 +582,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ylG-3d-Eeq" kind="relationship" relationship="viewControllers" id="QEK-67-t3K"/>
-                        <segue destination="MTQ-0s-dSU" kind="relationship" relationship="viewControllers" id="q5O-AW-rNQ"/>
+                        <segue destination="EUY-KB-bdi" kind="relationship" relationship="viewControllers" id="irn-Nx-yO3"/>
+                        <segue destination="4GC-X6-efr" kind="relationship" relationship="viewControllers" id="GfM-AG-7cS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytP-gE-qME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-42" y="-582"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="dj1-4Q-8aw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EUY-KB-bdi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="ad7-2B-ceW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8zB-HG-3q6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QG0-dO-frz" kind="relationship" relationship="rootViewController" id="1x0-UK-Rec"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu1-e8-y1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1146" y="-224"/>
         </scene>
     </scenes>
     <resources>
@@ -616,7 +617,6 @@
         <image name="ic_chat" width="24" height="24"/>
         <image name="ic_exit_to_app" width="24" height="24"/>
         <image name="ic_file_upload" width="24" height="24"/>
-        <image name="ic_home" width="24" height="24"/>
         <image name="images" width="426" height="118"/>
         <image name="selly-full-logo" width="644" height="940"/>
     </resources>

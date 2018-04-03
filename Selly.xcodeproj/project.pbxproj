@@ -30,6 +30,7 @@
 		B87492FF206C730D000FB4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87492FE206C730D000FB4BB /* User.swift */; };
 		B8749301206C7520000FB4BB /* SellyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8749300206C7520000FB4BB /* SellyClient.swift */; };
 		B8749303206C7EC1000FB4BB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8749302206C7EC1000FB4BB /* Item.swift */; };
+		B874DD79207300820058340F /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874DD78207300820058340F /* ChatRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		B87492FE206C730D000FB4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B8749300206C7520000FB4BB /* SellyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellyClient.swift; sourceTree = "<group>"; };
 		B8749302206C7EC1000FB4BB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B874DD78207300820058340F /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		CDD62164F3BE477722E34BE4 /* Pods-Selly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selly/Pods-Selly.release.xcconfig"; sourceTree = "<group>"; };
 		D54057A8892405DD5AA970B0 /* Pods-SellyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellyUITests/Pods-SellyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EAEC828A8DCFB11CD85A78D4 /* Pods-SellyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellyTests/Pods-SellyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				B8749302206C7EC1000FB4BB /* Item.swift */,
 				1FF26F39206F038700F49E01 /* Constants.swift */,
 				1F64BF48207007590023CE6A /* ChatTableViewCell.swift */,
+				B874DD78207300820058340F /* ChatRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				01CC4FF9204E0B1200D2EA41 /* LoginViewController.swift in Sources */,
 				01CC4FFD204E0BC200D2EA41 /* UploadViewController.swift in Sources */,
 				B8749301206C7520000FB4BB /* SellyClient.swift in Sources */,
+				B874DD79207300820058340F /* ChatRoom.swift in Sources */,
 				1FCC03A9203E3E2000B2EA26 /* ViewController.swift in Sources */,
 				01CC4FFF204E0BEC00D2EA41 /* ChatViewController.swift in Sources */,
 				1FCC03A7203E3E2000B2EA26 /* AppDelegate.swift in Sources */,

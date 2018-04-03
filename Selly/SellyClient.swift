@@ -16,6 +16,7 @@ class SellyClient {
     let userRef = Database.database().reference().child("users")
     let itemRef = Database.database().reference().child("items")
     let itemPhotoRef = Storage.storage().reference().child("itemPhotos")
+    let chatRoomRef = Database.database().reference().child("chatRooms")
     
     func createFacebookUser(user: String, name: String, email: String, photo: String, success: @escaping (User) ->(), failure: @escaping (Error) ->()) {
         
@@ -100,7 +101,14 @@ class SellyClient {
         })
     }
 
-    
+    //
+    func getChatRooms(userId: String, success: @escaping ([ChatRoom]) -> (), failure: @escaping (Error)->()) {
+        chatRoomRef.queryEqual(toValue: userId, childKey: "uidBuyer").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let chatRoomsInfo = snapshot.value as? [[String: Any]] {
+                print(chatRoomsInfo)
+            }
+        })
+    }
 
     
     

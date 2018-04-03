@@ -11,6 +11,8 @@ import JSQMessagesViewController
 
 class ChatViewController: JSQMessagesViewController {
 
+    var chatRoom: ChatRoom!
+    
     //hi
     var messages = [JSQMessage]()
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
@@ -20,6 +22,7 @@ class ChatViewController: JSQMessagesViewController {
     lazy var incomingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
@@ -42,7 +45,9 @@ class ChatViewController: JSQMessagesViewController {
             showDisplayNameDialog()
         }
         
+        // room anme nav bar
         title = "Chat: \(senderDisplayName!)"
+//        title = "Product Name: "
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showDisplayNameDialog))
         tapGesture.numberOfTapsRequired = 1
@@ -57,6 +62,7 @@ class ChatViewController: JSQMessagesViewController {
         _ = query.observe(.childAdded, with: { [weak self] snapshot in
             
             if  let data        = snapshot.value as? [String: String],
+                let msgTimeStamp = data["msgSentTimeStamp"],
                 let id          = data["sender_id"],
                 let name        = data["name"],
                 let text        = data["text"],
@@ -87,7 +93,7 @@ class ChatViewController: JSQMessagesViewController {
             }
             else
             {
-                let names = ["Ford", "Arthur", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
+                let names = ["Arthur", "Ford", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
                 textField.text = names[Int(arc4random_uniform(UInt32(names.count)))]
             }
         }
@@ -133,11 +139,15 @@ class ChatViewController: JSQMessagesViewController {
     {
         return messages[indexPath.item].senderId == senderId ? 0 : 15
     }
+    
+    
+    // saving message
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
         let ref = Constants.refs.databaseChats.childByAutoId()
         
-        let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
+//        let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
+        let message = ["sender_id": senderId, "name": senderDisplayName, "text": text, "msgSentTimeStamp": Date().timeIntervalSince1970] as [String : Any]
         
         ref.setValue(message)
         
