@@ -194,20 +194,22 @@ SWIFT_CLASS("_TtC5Selly17ChatTableViewCell")
 @interface ChatTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified sellerImage;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerEmailLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified productNameLabel;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIRefreshControl;
 @class UITableView;
 
 SWIFT_CLASS("_TtC5Selly23ChatTableViewController")
 @interface ChatTableViewController : UITableViewController
 @property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likedProductName;
 @property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likedProductSellerName;
-@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified productURL;
+@property (nonatomic, copy) NSArray<NSURL *> * _Null_unspecified productURL;
+@property (nonatomic, strong) UIRefreshControl * _Null_unspecified refresh;
 @property (nonatomic, strong) FIRDatabaseReference * _Nonnull userRef;
 - (void)viewDidLoad;
 - (void)getLikedProducts;

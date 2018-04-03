@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "50b31896fa81ebeb2e8139a9680fcd65"
-build_time: [576028440, 728783000]
+build_time: [576050567, 432236000]
 inputs:
   "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/ViewControllers/LoginViewController.swift": [575766803, 0]
   "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/ViewControllers/UploadViewController.swift": [575766803, 0]
@@ -12,6 +12,6 @@ inputs:
   "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/Models/User.swift": [575766803, 0]
   "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/ViewControllers/BrowseViewController.swift": [576028439, 0]
   "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/ViewControllers/DetailViewController.swift": [575766803, 0]
-  "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/Models/ChatTableViewCell.swift": [575835660, 0]
-  "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/ViewControllers/ChatTableViewController.swift": [576028303, 0]
+  "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/Models/ChatTableViewCell.swift": [576050566, 0]
+  "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/ViewControllers/ChatTableViewController.swift": [576050447, 0]
   "/Users/SiD/Desktop/CS 490/newselly/selly/Selly/Models/Constants.swift": [575768720, 0]
