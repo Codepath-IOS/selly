@@ -388,33 +388,33 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zkr-to-z9V" id="6ew-Ue-tNh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-Xm-x4V">
-                                            <rect key="frame" x="8" y="0.0" width="71" height="64"/>
+                                            <rect key="frame" x="8" y="6" width="57" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Siddhant Patel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-ac-2wZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-ac-2wZ">
                                             <rect key="frame" x="87" y="8" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Si22hant@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAn-EX-4P2">
-                                            <rect key="frame" x="87" y="37" width="280" height="21"/>
+                                            <rect key="frame" x="87" y="23" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" red="0.46052109771573602" green="0.46052109771573602" blue="0.46052109771573602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="sellerEmailLabel" destination="IAn-EX-4P2" id="i60-o9-Cu8"/>
+                                    <outlet property="productNameLabel" destination="h1X-ac-2wZ" id="GbY-U6-oTM"/>
                                     <outlet property="sellerImage" destination="9o1-Xm-x4V" id="ktB-fp-0o8"/>
-                                    <outlet property="sellerNameLabel" destination="h1X-ac-2wZ" id="KrQ-VN-2ye"/>
+                                    <outlet property="sellerNameLabel" destination="IAn-EX-4P2" id="xdV-GZ-BMB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -427,7 +427,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7Q-Qa-mTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-660" y="1192"/>
+
+            <point key="canvasLocation" x="1188" y="1118.5907046476761"/>
+
         </scene>
         <!--Selly-->
         <scene sceneID="V7W-wI-2g3">
@@ -538,7 +540,9 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="ic_chat"/>
                                     <connections>
-                                        <segue destination="MTQ-0s-dSU" kind="show" id="fNU-cx-Ryf"/>
+
+                                        <segue destination="4GC-X6-efr" kind="show" id="JHO-fW-jaW"/>
+
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -569,7 +573,27 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="AGL-RP-cPe"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="G6Q-q3-8Z6"/>
             </objects>
-            <point key="canvasLocation" x="1903" y="-250"/>
+            <point key="canvasLocation" x="1188" y="200.14992503748127"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ZNJ-37-qMZ">
+            <objects>
+                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="ylG-3d-Eeq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="ar7-Fx-7AN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aU5-lZ-2QZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QG0-dO-frz" kind="relationship" relationship="rootViewController" id="ETV-nD-vsA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRo-cf-Cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="-582.45877061469275"/>
+
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xhX-3e-8c5">

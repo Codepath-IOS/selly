@@ -7,27 +7,54 @@
 //
 
 import UIKit
+import Firebase
+import AlamofireImage
 
 class ChatTableViewController: UITableViewController {
-    var likesProductsID : [String]!
-    
-    
+    var likedProductName : [String]! = []
+    var likedProductSellerName : [String]! = []
+    var productURL: [URL]! = []
+    var refresh: UIRefreshControl!
+    //var databaseRef = Database.database().reference()
+    var userRef = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!)
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(getter: ChatTableViewController.refresh), for: .valueChanged)
+        
+        tableView.insertSubview(refresh!, at: 0)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(getLikedProducts), userInfo: nil, repeats: false)
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    
+    
+    func getLikedProducts() {
+        //likedProductName = []
+        userRef.child("likedProducts").queryOrderedByKey().observe(.value, with: { (snapshot) in
+            for data in (snapshot.value as? NSDictionary)! {
+                let cc = data.value as! NSDictionary
+                //print(cc)
+                let name = cc["productName"] as? String!
+                let seller = cc["sellerName"] as? String!
+                let url = URL(string: (cc["photoURL"] as? String!)!)
+                
+                self.likedProductName.append(name!)
+                self.likedProductSellerName.append(seller!)
+                self.productURL.append(url!)
+                //print(cc["productName"] as? String ?? "")
+                
+            }
+            self.tableView.reloadData()
+            self.refresh?.endRefreshing()
+        })
+        //print(likedProductName)
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -36,13 +63,17 @@ class ChatTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return likesProductsID.count
+        print(likedProductName.count)
+        return likedProductName.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "likedCell", for: indexPath) as! ChatTableViewCell
-        cell.sellerNameLabel.text = likesProductsID[indexPath.row]
+        cell.productNameLabel.text = likedProductName[indexPath.row]
+        cell.sellerNameLabel.text = likedProductSellerName[indexPath.row]
+        cell.sellerImage.af_setImage(withURL: productURL[indexPath.row])
+        
         // Configure the cell...
 
         return cell

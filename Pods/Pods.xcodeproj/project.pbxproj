@@ -1558,14 +1558,23 @@
 			path = "../Target Support Files/AACarousel";
 			sourceTree = "<group>";
 		};
-		01E983C5634F15A996525A424ADDBE00 /* GTMSessionFetcher */ = {
+		02FB38A69F8EA70E3B0E22428B3ECA1D /* Pods-SellyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BE6486DB74070B0E2FCDB957627630AE /* Core */,
-				CE4E4125A3EB92C0793891E97C08EDCF /* Support Files */,
+				20015A9BC121C09E890CA8A4F5E469C6 /* Info.plist */,
+				D4D59E6C0A55BB7A1DDC598223A498A0 /* Pods-SellyUITests.modulemap */,
+				C9B354AFF67F554E6497C16B7A435411 /* Pods-SellyUITests-acknowledgements.markdown */,
+				5094C91BBBBAB3F1081E25542590A954 /* Pods-SellyUITests-acknowledgements.plist */,
+				EF49D1557E8ECE7437F333F849DEB0DC /* Pods-SellyUITests-dummy.m */,
+				C07054847AEF2941EAE81CF4279C4A9B /* Pods-SellyUITests-frameworks.sh */,
+				4B7650AA27B0510E92DD3AE3425318A4 /* Pods-SellyUITests-resources.sh */,
+				94C0F27EDE19E5E9B4487F7B32AEED3B /* Pods-SellyUITests-umbrella.h */,
+				21BF654B8D8CB8085EBF8C137FCEA916 /* Pods-SellyUITests.debug.xcconfig */,
+				F14AC413C9133B1159F2E3A1B9399342 /* Pods-SellyUITests.release.xcconfig */,
 			);
-			name = GTMSessionFetcher;
-			path = GTMSessionFetcher;
+			name = "Pods-SellyUITests";
+			path = "Target Support Files/Pods-SellyUITests";
+
 			sourceTree = "<group>";
 		};
 		042BCDEDD8B5632CEF9048656F661860 /* Frameworks */ = {
@@ -1732,7 +1741,8 @@
 			children = (
 				006462D20AC5C80CE745DC74654F86CD /* JSQSystemSoundPlayer.h */,
 				73D465C8178235F724FF6925A7B422C3 /* JSQSystemSoundPlayer.m */,
-				33D9798403614D9D41A278ED67379EAA /* Support Files */,
+
+				47CDA589EF3787BD4A337FB8EFB35708 /* Support Files */,
 			);
 			name = JSQSystemSoundPlayer;
 			path = JSQSystemSoundPlayer;
@@ -1758,6 +1768,22 @@
 				89CDA1F4C35C7279BC63E9BE0E7C9AEE /* FirebaseCore.framework */,
 			);
 			name = Frameworks;
+
+			sourceTree = "<group>";
+		};
+		44EDB4A48D898F29C022339F61F3CEA8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D944B1F0217616783CEB2492D9E6FFD4 /* FBSDKCoreKit.modulemap */,
+				D764DB0A7E199587A9A3FB3F14147615 /* FBSDKCoreKit.xcconfig */,
+				176CBE66CE6411D9EEBA6A63C1A302A5 /* FBSDKCoreKit-dummy.m */,
+				56E12D61C47012ECAD61C6030C2E163D /* FBSDKCoreKit-prefix.pch */,
+				3B0D32DA6A9F8A0A1917F0BBE81A89A5 /* FBSDKCoreKit-umbrella.h */,
+				2C1ACA6F4EFC7DD6C03C82C92A1E51CC /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FBSDKCoreKit";
+
 			sourceTree = "<group>";
 		};
 		45EC5D8AD7C50B3F46CFE94695A88F1D /* decode */ = {
@@ -1807,18 +1833,24 @@
 			path = nanopb;
 			sourceTree = "<group>";
 		};
-		4FDF50730B70DB5CF5B2E215E41012E4 /* Support Files */ = {
+
+		4DB2B65B1032B1B87F00879FE4FE5BAE /* Pods-SellyTests */ = {
 			isa = PBXGroup;
 			children = (
-				7968D8E478B429FC2E68EB0E01C57D5C /* Bolts.modulemap */,
-				212AA79493D48EE11C2C51646F21A340 /* Bolts.xcconfig */,
-				A180BCBAE159119EEDF5F57AACC76543 /* Bolts-dummy.m */,
-				172C0F4F7661AFBBA306817B85973173 /* Bolts-prefix.pch */,
-				B70E82A92AF3CFE5B3AA9044328691B5 /* Bolts-umbrella.h */,
-				8EF328F04A4C8C7FBA6B59FC74F471CA /* Info.plist */,
+				1A2501CED4A18E476478D387849329D1 /* Info.plist */,
+				8CBA35814D42088F70FBBC9348BA4FA4 /* Pods-SellyTests.modulemap */,
+				D433D8932483249CD48F577EC1804CE7 /* Pods-SellyTests-acknowledgements.markdown */,
+				61CA305ABF850267FA2B663AD77CDCD9 /* Pods-SellyTests-acknowledgements.plist */,
+				A7C2B8F7065DD6C88260ED935E367332 /* Pods-SellyTests-dummy.m */,
+				A731830C2B117EA3A1973227B0326F18 /* Pods-SellyTests-frameworks.sh */,
+				401F2775D4ADF76CE19618883E3D25B4 /* Pods-SellyTests-resources.sh */,
+				1B14FC6D8143A6EB6DDAB3965C824FB9 /* Pods-SellyTests-umbrella.h */,
+				3C6D77DCC9B34192D0724BD8E5A93669 /* Pods-SellyTests.debug.xcconfig */,
+				1E431C782C93D10B74384705D847694A /* Pods-SellyTests.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Bolts";
+			name = "Pods-SellyTests";
+			path = "Target Support Files/Pods-SellyTests";
+
 			sourceTree = "<group>";
 		};
 		54E17CDE4C476556D32F5ACCF25318F3 /* FirebaseInstanceID */ = {
@@ -1830,27 +1862,15 @@
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
-		5BDEE3B01E1E2FBC1DED39C659D43E9C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CC4E4FFDC4C2F4669777D27913FA54B /* Info.plist */,
-				66C732743CDA666697DF7B3A909396E4 /* JSQMessagesViewController.modulemap */,
-				8A3376DED030DB031A5494BF5D276985 /* JSQMessagesViewController.xcconfig */,
-				E31631220384C8C0B4C330B24F8811CE /* JSQMessagesViewController-dummy.m */,
-				BF1E16EA807D939ACD9409B7C2F7CF4E /* JSQMessagesViewController-prefix.pch */,
-				30325789A5C4ED61855D01C66D8E558B /* JSQMessagesViewController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/JSQMessagesViewController";
-			sourceTree = "<group>";
-		};
+
 		5DE80537997D7A67021E302D2D1C48E6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				771CB8135052643F471D20228A7A2A32 /* Pods-Selly */,
-				BAF8B11CBDA06719CDC3796128D67B35 /* Pods-SellyTests */,
-				C76640EF716D4DAA43C7D425EA852C7F /* Pods-SellyUITests */,
+				F345056FB621BCAD9FAE222C983C9DA3 /* Pods-Selly */,
+				4DB2B65B1032B1B87F00879FE4FE5BAE /* Pods-SellyTests */,
+				02FB38A69F8EA70E3B0E22428B3ECA1D /* Pods-SellyUITests */,
 			);
+
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
@@ -2029,7 +2049,9 @@
 				7F8D4427CEA730565ADBE1A2A72428ED /* write_batch.cc */,
 				D865F05F64E31F078E0FE8E4373160A6 /* write_batch.h */,
 				0BDA9C97A88B5AE860D27600DFC0E9C5 /* write_batch_internal.h */,
-				C83EC8DC5A1B33872A94B916AD08C9EC /* Support Files */,
+
+				6CCF5F9F442715F3281DECD471A88D5A /* Support Files */,
+
 			);
 			name = "leveldb-library";
 			path = "leveldb-library";
@@ -2635,17 +2657,27 @@
 			path = FBSDKLoginKit;
 			sourceTree = "<group>";
 		};
-		F35703B5A8CF32AE18311B78C07079A3 /* AACarousel */ = {
+
+		F345056FB621BCAD9FAE222C983C9DA3 /* Pods-Selly */ = {
 			isa = PBXGroup;
 			children = (
-				F10FB500090DD5D79870EBA53B068D3F /* AACarousel.swift */,
-				01E1DE8E02A84A186A18F4EA8B08A6B3 /* Support Files */,
+				90946EB6C6B6A6C241DE2092997319EB /* Info.plist */,
+				192F4DBB49EF621032A546F4A5992C44 /* Pods-Selly.modulemap */,
+				4A8427290972A0E29127826112B68163 /* Pods-Selly-acknowledgements.markdown */,
+				6F4828134AAC3EF534D9F4D80229B159 /* Pods-Selly-acknowledgements.plist */,
+				685EA40CDFE8EB55F7370F5BF6281E06 /* Pods-Selly-dummy.m */,
+				E3072EB678D8DA3F9938BCA419BB2A80 /* Pods-Selly-frameworks.sh */,
+				6D07D41B317857AA7EB718FA774B00BA /* Pods-Selly-resources.sh */,
+				4554EA1B69A40CECD8C5D142E68A08E9 /* Pods-Selly-umbrella.h */,
+				098A6DBFC657331FEB06518E103E41A1 /* Pods-Selly.debug.xcconfig */,
+				43D908B0AC01DCE0EBA39B95AB5FDA66 /* Pods-Selly.release.xcconfig */,
 			);
-			name = AACarousel;
-			path = AACarousel;
+			name = "Pods-Selly";
+			path = "Target Support Files/Pods-Selly";
 			sourceTree = "<group>";
 		};
-		F37DBD41D0E1206516AA6ABB39F25ACD /* Support Files */ = {
+		F35703B5A8CF32AE18311B78C07079A3 /* AACarousel */ = {
+
 			isa = PBXGroup;
 			children = (
 				0710D16DAC36DF7C68F229FD9E8FE841 /* FBSDKLoginKit.modulemap */,
@@ -2755,6 +2787,36 @@
 			path = JSQMessagesViewController;
 			sourceTree = "<group>";
 		};
+
+		F5902E790D271757DA15B171809BC7A2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				88939CAE21C69962AB03B7928B7F5543 /* Info.plist */,
+				56BFB9F3A0094B14FA6ADE6EA56EBC1E /* JSQMessagesViewController.modulemap */,
+				F5B2C64BB56C9D1C1C8B9088AB4BBD37 /* JSQMessagesViewController.xcconfig */,
+				32305DB73ECA555A8DC8BD1E99ECE5E7 /* JSQMessagesViewController-dummy.m */,
+				804A8DFB12AC3750A69F9D13E2CA12D0 /* JSQMessagesViewController-prefix.pch */,
+				BF8D427100D409B584D1C611FA4488B6 /* JSQMessagesViewController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JSQMessagesViewController";
+			sourceTree = "<group>";
+		};
+		F730BFBA186E77D1C339777A94A72523 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				74BE602DAD61F215140C4440746F8547 /* AACarousel.modulemap */,
+				0D4078063195FB988A28033236C01AD4 /* AACarousel.xcconfig */,
+				10350889B3D5F4DF04D0F3AD5CC38E1B /* AACarousel-dummy.m */,
+				6F2B4983DF632131D3688C40F829AE23 /* AACarousel-prefix.pch */,
+				F2983F45DE94887F45EACA57879E8FB5 /* AACarousel-umbrella.h */,
+				7152DA88F2A8C77ADEDF75C76AFF9538 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AACarousel";
+			sourceTree = "<group>";
+		};
+
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -3459,8 +3521,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -4041,7 +4103,9 @@
 /* Begin XCBuildConfiguration section */
 		01312D3D641CA3581B34B210CE83A4E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 672D17BE8FE1D3500A7D46B00425FAB1 /* nanopb.xcconfig */;
+
+			baseConfigurationReference = CF484395C5070675EC3467E6C8185E52 /* nanopb.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4072,7 +4136,9 @@
 		};
 		09B4D6721D7CA823D8F9EDC3403DF97F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1110559736AC81FC5BFC00F225CC2579 /* leveldb-library.xcconfig */;
+
+			baseConfigurationReference = 78C886AACA43D1F11649A7A3F03CE596 /* leveldb-library.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4102,7 +4168,9 @@
 		};
 		0E1F88FA1909DEF048CE338DC00167E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 672D17BE8FE1D3500A7D46B00425FAB1 /* nanopb.xcconfig */;
+
+			baseConfigurationReference = CF484395C5070675EC3467E6C8185E52 /* nanopb.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4130,7 +4198,9 @@
 			};
 			name = Debug;
 		};
-		1574DFBE46C3A95056829BC718547A7A /* Release */ = {
+
+		1465D93D045430055A3FABADBB49D0BE /* Release */ = {
+
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -4177,17 +4247,30 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
+
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Selly/Pods-Selly.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Selly;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 		16423B898BAB3737650183D6ED2C73BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 959106B31A10CAEAF1B453C4F4E59FC6 /* AACarousel.xcconfig */;
+
+			baseConfigurationReference = 0D4078063195FB988A28033236C01AD4 /* AACarousel.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4216,71 +4299,13 @@
 			};
 			name = Debug;
 		};
-		1C60B5896C80AFB61BBC10956D5B0A00 /* Debug */ = {
+		166B7E3E303B25B8659E601DA5624D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61073DB93930AD042A21DFB43F4FF970 /* FBSDKLoginKit.xcconfig */;
+
+			baseConfigurationReference = 21BF654B8D8CB8085EBF8C137FCEA916 /* Pods-SellyUITests.debug.xcconfig */;
+
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FBSDKLoginKit/FBSDKLoginKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FBSDKLoginKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FBSDKLoginKit/FBSDKLoginKit.modulemap";
-				PRODUCT_NAME = FBSDKLoginKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1F7CE06EC55E2064873082EC64CB305A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C96A5FCEEC7AEA04DBBCEE2DE51BE7C9 /* GoogleToolboxForMac.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
-				PRODUCT_NAME = GoogleToolboxForMac;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3222449A0F02E5F58F38A61DA9EBF3B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4931A113AB8E628FD9E2956EA6EAD7D /* Pods-SellyUITests.debug.xcconfig */;
-			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4309,9 +4334,74 @@
 			};
 			name = Debug;
 		};
+		1C60B5896C80AFB61BBC10956D5B0A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+
+			baseConfigurationReference = 8EAE2F729262154FC24760C958F3DB4B /* FBSDKLoginKit.xcconfig */;
+
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FBSDKLoginKit/FBSDKLoginKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBSDKLoginKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBSDKLoginKit/FBSDKLoginKit.modulemap";
+				PRODUCT_NAME = FBSDKLoginKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+
+		1F7CE06EC55E2064873082EC64CB305A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBC4AC33A455AD4C036C61A5FF07D9A7 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3C6DD9EDB5318BE548C10B0698D94F65 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 212AA79493D48EE11C2C51646F21A340 /* Bolts.xcconfig */;
+			baseConfigurationReference = 401BAF6249ACD59F0245C468F1F423A9 /* Bolts.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4341,7 +4431,9 @@
 		};
 		45A6D29473834984DD1FFE7D9783D8F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1110559736AC81FC5BFC00F225CC2579 /* leveldb-library.xcconfig */;
+
+			baseConfigurationReference = 78C886AACA43D1F11649A7A3F03CE596 /* leveldb-library.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4372,7 +4464,9 @@
 		};
 		4D049E6148ECCA2DF9A97CC8A4C6A964 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71FE96F4ED146115E863FF24F963AC82 /* IQKeyboardManagerSwift.xcconfig */;
+
+			baseConfigurationReference = AD4469701B817A914C9260274C3B6B08 /* IQKeyboardManagerSwift.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4402,39 +4496,69 @@
 			};
 			name = Release;
 		};
-		57A6EFF50048CE5D277100F051ACA756 /* Debug */ = {
+
+		52963673ADAB30EC57625F006D328D81 /* Release */ = {
+
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 025859DB7CAE2FCFD2458E44ED3BAFD4 /* Pods-SellyTests.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SellyTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SellyTests/Pods-SellyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SellyTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
 			};
-			name = Debug;
+			name = Release;
 		};
-		5B5A1446720EEC8CE963B9BD750713E4 /* Debug */ = {
+		5E66EDB50E7D107AAADE0DF38AF04C92 /* Debug */ = {
+
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -4444,10 +4568,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -4455,6 +4581,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -4496,7 +4623,8 @@
 		};
 		62BBA5B88ED957CB681FD99411532982 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61073DB93930AD042A21DFB43F4FF970 /* FBSDKLoginKit.xcconfig */;
+
+			baseConfigurationReference = 8EAE2F729262154FC24760C958F3DB4B /* FBSDKLoginKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4527,7 +4655,7 @@
 		};
 		671C34F00D0F78911EAA7F1BE9DDEFF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4365B6B8CDFD767E11137A936BD4E6B8 /* GTMSessionFetcher.xcconfig */;
+			baseConfigurationReference = 8E345CB15F09D368F386AA2E4B965D3D /* GTMSessionFetcher.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4557,7 +4685,9 @@
 		};
 		6CD2CF3CB56F8D2390B8CD744515AD17 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F3E2B3F49342ED5C2E6CC71D499179D /* Alamofire.xcconfig */;
+
+			baseConfigurationReference = A16BF03F54A933293A6C133749506D5E /* Alamofire.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4589,7 +4719,9 @@
 		};
 		6D1062A0CD3A02C3079FC3EE8D32F7A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3ECB4AC12F4FD0E259C7D080195C5F /* FBSDKCoreKit.xcconfig */;
+
+			baseConfigurationReference = D764DB0A7E199587A9A3FB3F14147615 /* FBSDKCoreKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4617,7 +4749,9 @@
 			};
 			name = Debug;
 		};
-		7C771030F1F7C67BCF6D0C3BF1CE56BC /* Debug */ = {
+
+		6D9880E6BC0EEE93C7947A91FBC62A25 /* Release */ = {
+
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88DB00155DEB0A5BDE61DDE57BD41B37 /* JSQSystemSoundPlayer.xcconfig */;
 			buildSettings = {
@@ -4715,7 +4849,9 @@
 		};
 		8AB7F36F49B896CF49A5E05816656301 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C74FB036963E20015ACB21F51ED4DB /* Pods-Selly.release.xcconfig */;
+
+			baseConfigurationReference = 0D4078063195FB988A28033236C01AD4 /* AACarousel.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4747,10 +4883,11 @@
 			};
 			name = Release;
 		};
-		8B4FE51CE0BB559E57B6F19267023255 /* Release */ = {
+		8CB673936336163366CDC40CF59DABAE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 929C13411D76A00845C6A7660DE93702 /* Pods-SellyUITests.release.xcconfig */;
+			baseConfigurationReference = 3C6D77DCC9B34192D0724BD8E5A93669 /* Pods-SellyTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -4760,7 +4897,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SellyUITests/Info.plist";
+
+				INFOPLIST_FILE = "Target Support Files/Pods-SellyTests/Info.plist";
+
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -4813,7 +4952,9 @@
 		};
 		999B806A1B7604C4009FA782AFB21784 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88DB00155DEB0A5BDE61DDE57BD41B37 /* JSQSystemSoundPlayer.xcconfig */;
+
+			baseConfigurationReference = 58C9248303DC4BAD9BED1BF7FF812277 /* JSQSystemSoundPlayer.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4875,7 +5016,9 @@
 		};
 		AEAC3997249CC114C5B12A3D9C3498E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B0654BAC983BC5830EC91FFC5BB7664 /* AlamofireImage.xcconfig */;
+
+			baseConfigurationReference = DE1B7AFBE1EE0D46CCBCA2644A4B8FCD /* AlamofireImage.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4907,7 +5050,9 @@
 		};
 		CFD80DB712FDBDE4262680DE0D87F74E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71FE96F4ED146115E863FF24F963AC82 /* IQKeyboardManagerSwift.xcconfig */;
+
+			baseConfigurationReference = AD4469701B817A914C9260274C3B6B08 /* IQKeyboardManagerSwift.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4938,7 +5083,9 @@
 		};
 		D091E605D6CE5291CBEABB81EB086A21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3ECB4AC12F4FD0E259C7D080195C5F /* FBSDKCoreKit.xcconfig */;
+
+			baseConfigurationReference = D764DB0A7E199587A9A3FB3F14147615 /* FBSDKCoreKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -4999,7 +5146,9 @@
 		};
 		D4A05B6981367CD35876D9A5005EDD54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B0654BAC983BC5830EC91FFC5BB7664 /* AlamofireImage.xcconfig */;
+
+			baseConfigurationReference = DE1B7AFBE1EE0D46CCBCA2644A4B8FCD /* AlamofireImage.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5028,7 +5177,9 @@
 			};
 			name = Debug;
 		};
-		D5C4ED073912398BE61AF18BF0B4AFF1 /* Release */ = {
+
+		D97244CA7A49CBE0A76AE8B235D653C6 /* Debug */ = {
+
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C0B3A0D7B47A1FD5466E76A44F27DF83 /* Pods-SellyTests.release.xcconfig */;
 			buildSettings = {
@@ -5041,12 +5192,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SellyTests/Info.plist";
+
+				INFOPLIST_FILE = "Target Support Files/Pods-Selly/Info.plist";
+
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SellyTests/Pods-SellyTests.modulemap";
+
+				MODULEMAP_FILE = "Target Support Files/Pods-Selly/Pods-Selly.modulemap";
+
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -5063,7 +5218,9 @@
 		};
 		D977BF1F48D82F9BCA26A24ADAEDA1AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4365B6B8CDFD767E11137A936BD4E6B8 /* GTMSessionFetcher.xcconfig */;
+
+			baseConfigurationReference = 8E345CB15F09D368F386AA2E4B965D3D /* GTMSessionFetcher.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5094,7 +5251,8 @@
 		};
 		DBA6215C874CDE5C84F1A8D80D7E7BF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2C483E0858E0925CBD26C583ACA9657 /* Kingfisher.xcconfig */;
+
+			baseConfigurationReference = 35D81AA88CDA29E5F2A276C9F743A442 /* Kingfisher.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5125,7 +5283,9 @@
 		};
 		DC86DD4EE0B27F97A60DBCCEDB4C7E14 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 212AA79493D48EE11C2C51646F21A340 /* Bolts.xcconfig */;
+
+			baseConfigurationReference = 401BAF6249ACD59F0245C468F1F423A9 /* Bolts.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5156,7 +5316,9 @@
 		};
 		DFA2CF109974DBC1A17B0E56F0E62CF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C96A5FCEEC7AEA04DBBCEE2DE51BE7C9 /* GoogleToolboxForMac.xcconfig */;
+
+			baseConfigurationReference = EBC4AC33A455AD4C036C61A5FF07D9A7 /* GoogleToolboxForMac.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5184,9 +5346,44 @@
 			};
 			name = Debug;
 		};
+		E4F9B9DD1D227FD657B64DF081943C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E431C782C93D10B74384705D847694A /* Pods-SellyTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SellyTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SellyTests/Pods-SellyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SellyTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F2D6FF3F26C85220BA1807B09816814D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2C483E0858E0925CBD26C583ACA9657 /* Kingfisher.xcconfig */;
+
+			baseConfigurationReference = 35D81AA88CDA29E5F2A276C9F743A442 /* Kingfisher.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5258,8 +5455,8 @@
 		2308E206F0BE4E943D47202A8C5896D8 /* Build configuration list for PBXNativeTarget "Pods-SellyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57A6EFF50048CE5D277100F051ACA756 /* Debug */,
-				D5C4ED073912398BE61AF18BF0B4AFF1 /* Release */,
+				8CB673936336163366CDC40CF59DABAE /* Debug */,
+				E4F9B9DD1D227FD657B64DF081943C65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5267,8 +5464,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B5A1446720EEC8CE963B9BD750713E4 /* Debug */,
-				1574DFBE46C3A95056829BC718547A7A /* Release */,
+				5E66EDB50E7D107AAADE0DF38AF04C92 /* Debug */,
+				52963673ADAB30EC57625F006D328D81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5339,8 +5536,8 @@
 		CC8B3F03D3A1A80586C30D805552DBD3 /* Build configuration list for PBXNativeTarget "Pods-SellyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3222449A0F02E5F58F38A61DA9EBF3B2 /* Debug */,
-				8B4FE51CE0BB559E57B6F19267023255 /* Release */,
+				166B7E3E303B25B8659E601DA5624D16 /* Debug */,
+				6D9880E6BC0EEE93C7947A91FBC62A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

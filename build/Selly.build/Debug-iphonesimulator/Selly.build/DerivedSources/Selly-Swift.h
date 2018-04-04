@@ -145,7 +145,6 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 @class FIRDatabaseReference;
 @class NSNull;
-@class NSUserDefaults;
 @class UIPanGestureRecognizer;
 @class UIStoryboardSegue;
 @class UILabel;
@@ -156,6 +155,8 @@ SWIFT_CLASS("_TtC5Selly11AppDelegate")
 
 SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @interface BrowseViewController : UIViewController
+@property (nonatomic, readonly, copy) NSString * _Nullable currentUser;
+@property (nonatomic, strong) FIRDatabaseReference * _Nonnull userRef;
 @property (nonatomic, strong) FIRDatabaseReference * _Nonnull databaseRef;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified priceLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified categoryLabel;
@@ -173,9 +174,8 @@ SWIFT_CLASS("_TtC5Selly20BrowseViewController")
 @property (nonatomic, copy) NSString * _Nonnull itemDescription;
 @property (nonatomic, copy) NSString * _Nonnull itemPrice;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull itemURLS;
-@property (nonatomic, copy) NSString * _Null_unspecified productID;
+@property (nonatomic, copy) NSString * _Null_unspecified sellerImageURL;
 @property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
-@property (nonatomic, readonly, strong) NSUserDefaults * _Nonnull defaults;
 - (IBAction)rightButton:(id _Nonnull)sender;
 - (void)getProduct;
 - (void)viewDidLoad;
@@ -194,20 +194,25 @@ SWIFT_CLASS("_TtC5Selly17ChatTableViewCell")
 @interface ChatTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified sellerImage;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified sellerEmailLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified productNameLabel;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIRefreshControl;
 @class UITableView;
 
 SWIFT_CLASS("_TtC5Selly23ChatTableViewController")
 @interface ChatTableViewController : UITableViewController
-@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likesProductsID;
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likedProductName;
+@property (nonatomic, copy) NSArray<NSString *> * _Null_unspecified likedProductSellerName;
+@property (nonatomic, copy) NSArray<NSURL *> * _Null_unspecified productURL;
+@property (nonatomic, strong) UIRefreshControl * _Null_unspecified refresh;
+@property (nonatomic, strong) FIRDatabaseReference * _Nonnull userRef;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
+- (void)getLikedProducts;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
