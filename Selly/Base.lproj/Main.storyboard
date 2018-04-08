@@ -9,6 +9,11 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -388,7 +393,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zkr-to-z9V" id="6ew-Ue-tNh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-Xm-x4V">
@@ -427,9 +432,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7Q-Qa-mTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="1188" y="1118.5907046476761"/>
-
         </scene>
         <!--Selly-->
         <scene sceneID="V7W-wI-2g3">
@@ -540,9 +543,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="ic_chat"/>
                                     <connections>
-
                                         <segue destination="4GC-X6-efr" kind="show" id="JHO-fW-jaW"/>
-
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -578,7 +579,7 @@
         <!--Home-->
         <scene sceneID="ZNJ-37-qMZ">
             <objects>
-                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="ylG-3d-Eeq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ylG-3d-Eeq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="ar7-Fx-7AN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aU5-lZ-2QZ">
@@ -593,7 +594,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRo-cf-Cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1188" y="-582.45877061469275"/>
-
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xhX-3e-8c5">
@@ -631,7 +631,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lu1-e8-y1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="-224"/>
+            <point key="canvasLocation" x="-42" y="1119"/>
         </scene>
     </scenes>
     <resources>
@@ -641,7 +641,12 @@
         <image name="ic_chat" width="24" height="24"/>
         <image name="ic_exit_to_app" width="24" height="24"/>
         <image name="ic_file_upload" width="24" height="24"/>
+        <image name="ic_home" width="24" height="24"/>
         <image name="images" width="426" height="118"/>
         <image name="selly-full-logo" width="644" height="940"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ETV-nD-vsA"/>
+        <segue reference="GfM-AG-7cS"/>
+    </inferredMetricsTieBreakers>
 </document>
