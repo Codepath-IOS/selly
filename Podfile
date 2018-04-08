@@ -26,7 +26,7 @@ target 'Selly' do
 	pod 'Kingfisher', '~> 4.0'
 	pod 'Alamofire'
 	pod 'AlamofireImage', '~> 3.3'
-    	
+    pod 'IQKeyboardManagerSwift', '~> 3.3'
 	pod 'JSQMessagesViewController'
 
 end

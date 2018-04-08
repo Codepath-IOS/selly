@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,6 +92,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A406768D0CF085D0371F48E709F010D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
@@ -117,11 +127,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CCA6FFE558C0B86FC424D409A40CFEA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7EB31AD5861E17AD28EFB10D4CA40DAB</key>
 		<dict>
 			<key>primary</key>
@@ -133,6 +138,11 @@
 			<true/>
 		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B63C41919281CA763345A4C778D202F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
